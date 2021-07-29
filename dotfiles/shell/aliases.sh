@@ -1,7 +1,3 @@
-# Add an "alert" alias for long running commands:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Colored
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
@@ -81,3 +77,6 @@ alias uua="uu && sudo apt autoremove -y"
 # Time
 alias now="date +'%T'"
 alias nowdate="date +'%d-%m-%Y'"
+## Add an "alert" alias for long running commands:
+##   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
