@@ -1,0 +1,10 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "dotfiles/shell/plugins/devilbox-cli"]
+	path = dotfiles/shell/plugins/devilbox-cli
+	url = https://github.com/inigochoa/devilbox-cli
+[submodule ".dotbot"]
+	path = .dotbot
+	url = https://github.com/anishathalye/dotbot
