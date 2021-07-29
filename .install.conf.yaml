@@ -1,0 +1,22 @@
+- defaults:
+    link:
+        create: true
+        force: true
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.bash:
+    ~/.bash_logout:
+    ~/.bash_profile:
+    ~/.bashrc:
+    ~/.gitconfig:
+    ~/.gitignore_global:
+    ~/.scripts:
+    ~/.shell:
+    ~/.wallpapers:
+
+- shell:
+    - . $HOME/.bashrc
+    - source $HOME/.bashrc

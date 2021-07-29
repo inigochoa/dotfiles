@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Update dotfiles submodules
+git submodule update --remote
+git commit -m 'Modules updated' `git submodule | grep '^+' | cut -d ' ' -f 2`
+
+git submodule update --init --recursive
+
