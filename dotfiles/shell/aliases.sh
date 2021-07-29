@@ -1,3 +1,9 @@
+# Bash
+alias aliases="alias | sed 's/=.*//'"
+alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
+alias paths='echo -e ${PATH//:/\\n}'
+alias reload="source ~/.bash_profile"
+
 # Colored
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
@@ -33,6 +39,7 @@ alias rm="rm -I --preserve-root"
 alias tokei="tokei --hidden"
 
 # Internet
+alias hosts="sudo $EDITOR /etc/hosts"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias nmap="sudo -E nmap"
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
