@@ -28,8 +28,7 @@ alias cp="cp -riv"
 alias ln="ln -iv"
 alias mv="mv -iv"
 ## Editors - https://github.com/sharkdp/bat
-alias bat="batcat"
-alias cat="batcat"
+alias cat="bat"
 alias nano="nano -c"
 ## Safety
 alias chgrp="chgrp --preserve-root"

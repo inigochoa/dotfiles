@@ -13,7 +13,7 @@ My personal dotfiles. Use them at your own risk.
 
 #### apt
 
-* [bat]
+* [bat] (installed via .deb to have the latest version)
 
 #### rust
 

@@ -11,6 +11,7 @@
     ~/.bash_logout:
     ~/.bash_profile:
     ~/.bashrc:
+    ~/.bat.conf:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.scripts:
