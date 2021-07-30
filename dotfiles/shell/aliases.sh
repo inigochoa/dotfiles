@@ -64,7 +64,9 @@ alias htop="btm"
 alias top="btm"
 ### CPU
 alias cpuinfo="lscpu"
-alias cputemp="echo $(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))ºC"
+if [ -f /sys/class/thermal/thermal_zone0/temp ]; then
+  alias cputemp="echo $(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))ºC"
+fi
 alias pscpu="ps auxf | sort -nr -k 3"
 alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
 ### Memory
