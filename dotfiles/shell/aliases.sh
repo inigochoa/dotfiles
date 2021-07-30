@@ -77,7 +77,9 @@ alias du2="du --max-depth=2 | sort -h"
 alias meminfo="free -m -l -t"
 alias psmem="ps auxf | sort -nr -k 4"
 alias psmem10="ps auxf | sort -nr -k 4 | head -10"
-alias gpumeminfo="grep -i --color memory /var/log/Xorg.0.log"
+if [ -f /var/log/Xorg.0.log ]; then
+  alias gpumeminfo="grep -i --color memory /var/log/Xorg.0.log"
+fi
 ## Updates
 alias u="sudo apt update"
 alias uu="u && sudo apt upgrade -y"
