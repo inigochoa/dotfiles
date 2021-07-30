@@ -31,6 +31,7 @@ alias ln="ln -iv"
 alias mv="mv -iv"
 ## Editors - https://github.com/sharkdp/bat
 if command -v batcat &> /dev/null; then
+  alias bat="batcat"
   alias cat="batcat"
 fi
 alias nano="nano -c"
