@@ -17,10 +17,12 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 ## ls - https://github.com/ogham/exa
-alias l="exa -h --git"
-alias ls="exa -h --git"
-alias la="exa -ah --git"
-alias ll="exa -ahl --git"
+if command -v exa &> /dev/null; then
+  alias l="exa -h --git"
+  alias ls="exa -h --git"
+  alias la="exa -ah --git"
+  alias ll="exa -ahl --git"
+fi
 
 # Files
 ## Confirmations
@@ -28,7 +30,9 @@ alias cp="cp -riv"
 alias ln="ln -iv"
 alias mv="mv -iv"
 ## Editors - https://github.com/sharkdp/bat
-alias cat="batcat"
+if command -v batcat &> /dev/null; then
+  alias cat="batcat"
+fi
 alias nano="nano -c"
 ## Safety
 alias chgrp="chgrp --preserve-root"
@@ -36,7 +40,9 @@ alias chmod="chmod --preserve-root"
 alias chown="chown --preserve-root"
 alias rm="rm -I --preserve-root"
 ## tokei - https://github.com/XAMPPRocky/tokei
-alias tokei="tokei --hidden"
+if command -v tokei &> /dev/null; then
+  alias tokei="tokei --hidden"
+fi
 
 # Internet
 alias hosts="sudo $EDITOR /etc/hosts"
@@ -60,8 +66,11 @@ alias reboot="sudo /sbin/reboot"
 alias shutdown="sudo /sbin/shutdown"
 ## Status
 ### bottom - https://github.com/ClementTsang/bottom
-alias htop="btm"
-alias top="btm"
+if command -v btm &> /dev/null; then
+  alias htop="btm"
+  alias top="btm"
+fi
+
 ### CPU
 alias cpuinfo="lscpu"
 if [ -f /sys/class/thermal/thermal_zone0/temp ]; then
