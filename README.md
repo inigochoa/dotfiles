@@ -15,6 +15,10 @@ My personal dotfiles. Use them at your own risk.
 
 * [bat] (installed via .deb to have the latest version)
 
+#### GitHub
+
+* [fetch-master 6000]
+
 #### rust
 
 * [bottom]
@@ -43,6 +47,7 @@ recommended to store them in **shell_local_before** or **bashrc_local_before**
 [dotbot]: https://github.com/anishathalye/dotbot
 [devilbox-cli]: https://github.com/inigochoa/devilbox-cli
 [bat]: https://github.com/sharkdp/bat
+[fetch-master 6000]: https://github.com/anhsirk0/fetch-master-6000
 [bottom]: https://github.com/ClementTsang/bottom
 [exa]: https://github.com/ogham/exa
 [tokei]: https://github.com/XAMPPRocky/tokei
