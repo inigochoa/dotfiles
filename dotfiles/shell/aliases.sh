@@ -62,7 +62,6 @@ alias shutdown="sudo /sbin/shutdown"
 ### bottom - https://github.com/ClementTsang/bottom
 alias htop="btm"
 alias top="btm"
-
 ### CPU
 alias cpuinfo="lscpu"
 if [ -f /sys/class/thermal/thermal_zone0/temp ]; then
