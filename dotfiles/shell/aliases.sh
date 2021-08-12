@@ -13,9 +13,10 @@ alias egrep="egrep --color=auto"
 ## cd
 alias cd..="cd .."
 alias ..="cd .."
-alias ..2="cd ../.."
-alias ..3="cd ../../.."
-alias ..4="cd ../../../.."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
 ## ls - https://github.com/ogham/exa
 alias l="exa -h --git"
 alias ls="exa -h --git"
