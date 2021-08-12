@@ -18,10 +18,17 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 ## ls - https://github.com/ogham/exa
-alias l="exa -h --git"
-alias ls="exa -h --git"
-alias la="exa -ah --git"
-alias ll="exa -ahl --git"
+alias exa="exa --color=always --group-directories-first"
+alias l="exa"
+alias la="l -a"
+alias ll="la -hl --git"
+alias ls="l"
+alias lt="la -T"
+alias lt2="lt --level=2"
+alias lt3="lt --level=3"
+alias lt4="lt --level=4"
+alias lt5="lt --level=5"
+alias l.="la | egrep '^\.'"
 
 # Files
 ## Confirmations
