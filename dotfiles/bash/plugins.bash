@@ -1,4 +1,4 @@
-## Android SDK
+# Android SDK
 export CAPACITOR_ANDROID_STUDIO_PATH=/snap/bin/android-studio
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 
