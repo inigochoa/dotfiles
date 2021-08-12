@@ -9,6 +9,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 # Cargo
 source "$HOME/.cargo/env"
 
+# Executables
+export PATH="$HOME/.local/bin:$PATH"
+
 # Ruby Gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
