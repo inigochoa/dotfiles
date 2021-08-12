@@ -5,9 +5,9 @@ alias paths='echo -e ${PATH//:/\\n}'
 alias reload="source ~/.bash_profile"
 
 # Colored
-alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias grep="grep --color=auto"
 
 # Directories
 ## cd
