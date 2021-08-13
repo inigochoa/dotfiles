@@ -20,17 +20,24 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 ## ls - https://github.com/ogham/exa
-alias exa="exa --color=always --group-directories-first"
-alias l="exa"
-alias la="l -a"
-alias ll="la -hl --git"
-alias ls="l"
-alias lt="la -T"
-alias lt2="lt --level=2"
-alias lt3="lt --level=3"
-alias lt4="lt --level=4"
-alias lt5="lt --level=5"
-alias l.="la | egrep '^\.'"
+if [ -f ~/.cargo/bin/exa ]; then
+  alias exa="exa --color=always --group-directories-first"
+  alias l="exa"
+  alias la="l -a"
+  alias ll="la -hl --git"
+  alias ls="l"
+  alias lt="la -T"
+  alias lt2="lt --level=2"
+  alias lt3="lt --level=3"
+  alias lt4="lt --level=4"
+  alias lt5="lt --level=5"
+  alias l.="la | egrep '^\.'"
+else
+  alias ls='ls --color=auto'
+  alias ll='ls -alF'
+  alias la='ls -A'
+  alias l='ls -CF'
+fi
 
 # Files
 ## Confirmations
@@ -38,7 +45,9 @@ alias cp="cp -riv"
 alias ln="ln -iv"
 alias mv="mv -iv"
 ## Editors - https://github.com/sharkdp/bat
-alias cat="bat"
+if [ -f /usr/bin/bat ]; then
+  alias cat="bat"
+fi
 alias nano="nano -c"
 ## Safety
 alias chgrp="chgrp --preserve-root"
@@ -46,7 +55,9 @@ alias chmod="chmod --preserve-root"
 alias chown="chown --preserve-root"
 alias rm="rm -I --preserve-root"
 ## tokei - https://github.com/XAMPPRocky/tokei
-alias tokei="tokei --hidden"
+if [ -f ~/.cargo/bin/tokei ]; then
+  alias tokei="tokei --hidden"
+fi
 
 # Internet
 alias hosts="sudo $EDITOR /etc/hosts"
@@ -60,6 +71,7 @@ alias fastping="ping -c 100 -s 2"
 
 # Node
 alias npkill="npx npkill ."
+alias serve="npx serve"
 alias twconf="npx tailwind-config-viewer -o"
 
 # System
@@ -70,8 +82,10 @@ alias reboot="sudo /sbin/reboot"
 alias shutdown="sudo /sbin/shutdown"
 ## Status
 ### bottom - https://github.com/ClementTsang/bottom
-alias htop="btm"
-alias top="btm"
+if [ -f ~/.cargo/bin/btm ]; then
+  alias htop="btm"
+  alias top="btm"
+fi
 ### CPU
 alias cpuinfo="lscpu"
 if [ -f /sys/class/thermal/thermal_zone0/temp ]; then
