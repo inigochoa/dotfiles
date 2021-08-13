@@ -80,7 +80,7 @@ fi
 alias pscpu="ps auxf | sort -nr -k 3"
 alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
 ### fetch-master 6000 - https://github.com/anhsirk0/fetch-master-6000
-if [ -f ~/.local/bin/fm6000 ]; then
+if [ -f ~/.local/bin/fm6000 ] || [ -f /usr/local/bin/fm6000 ]; then
   alias fm6000="fm6000 -r -c bright_blue"
   alias neofetch="fm6000"
 fi
