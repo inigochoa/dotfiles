@@ -174,7 +174,7 @@ transfer() {
 
 # Weather report
 wttr() {
-  local request="wttr.in/${1-Vitoria}"
+  local request="wttr.in/${1}"
   [ "$(tput cols)" -lt 125 ] && request+='?n'
   curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
 }
