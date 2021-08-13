@@ -35,6 +35,24 @@ certnames() {
   fi;
 }
 
+# Throw a dice
+dice() {
+  r=$(($RANDOM % 6 + 1))
+
+  printf '___________\n|         |\n'
+
+  case $r in
+    1) printf '|         |\n|    *    |\n|         |' ;;
+    2) printf '|  *      |\n|         |\n|     *   |' ;;
+    3) printf '|  *      |\n|    *    |\n|      *  |' ;;
+    4) printf '|  *   *  |\n|         |\n|  *   *  |' ;;
+    5) printf '|  *   *  |\n|    *    |\n|  *   *  |' ;;
+    6) printf '|  * * *  |\n|         |\n|  * * *  |' ;;
+  esac
+
+  printf '\n|_________|\n'
+}
+
 # devilbox-cli - https://github.com/inigochoa/devilbox-cli
 . ~/.shell/plugins/devilbox-cli/devilbox.sh
 
