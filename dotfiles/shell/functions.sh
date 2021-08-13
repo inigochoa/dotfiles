@@ -54,7 +54,9 @@ dice() {
 }
 
 # devilbox-cli - https://github.com/inigochoa/devilbox-cli
-. ~/.shell/plugins/devilbox-cli/devilbox.sh
+if [ -f ~/.shell/plugins/devilbox-cli/devilbox.sh ]; then
+  . ~/.shell/plugins/devilbox-cli/devilbox.sh
+fi
 
 # Empty a file
 empty() {
