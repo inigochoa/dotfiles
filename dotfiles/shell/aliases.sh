@@ -2,6 +2,7 @@
 alias aliases="alias | sed 's/=.*//'"
 alias copy="xclip -selection clipboard"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
+alias parrot="curl parrot.live"
 alias paste="xclip -selection clipboard -o"
 alias paths='echo -e ${PATH//:/\\n}'
 alias rates="curl rate.sx"
