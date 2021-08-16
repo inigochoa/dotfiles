@@ -140,6 +140,13 @@ path_prepend() {
   PATH="$1${PATH:+":$PATH"}"
 }
 
+# QR encode a text
+qr() {
+  local request="qrenco.de/${1}"
+  [ "$(tput cols)" -lt 125 ] && request+='?n'
+  curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+}
+
 # Upload file to transfer.sh - https://transfer.sh/
 transfer() {
   if [ $# -eq 0 ]; then
