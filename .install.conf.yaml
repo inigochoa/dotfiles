@@ -19,5 +19,6 @@
     ~/.config/bat/config: shell/plugins/bat.conf
 
 - shell:
+    - cat ~/.shell/gterminal.profiles | dconf load /org/gnome/terminal/
     - . $HOME/.bashrc
     - source $HOME/.bashrc
