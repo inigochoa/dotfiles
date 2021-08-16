@@ -35,6 +35,13 @@ certnames() {
   fi;
 }
 
+# Cheat sheet
+cheat() {
+  local request="cheat.sh/${1}"
+  [ "$(tput cols)" -lt 125 ] && request+='?n'
+  curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+}
+
 # Throw a dice
 dice() {
   r=$(($RANDOM % 6 + 1))
