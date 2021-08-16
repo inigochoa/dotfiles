@@ -61,7 +61,7 @@ fi
 
 # Internet
 alias hosts="sudo $EDITOR /etc/hosts"
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl ifconfig.co/"
 alias nmap="sudo -E nmap"
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias wget="wget -c"
