@@ -12,7 +12,9 @@ style = "bright-blue"
 [directory]
 format = "[in](green) [$path]($style)[$read_only]($read_only_style) "
 style = "yellow"
+truncation_length = 2
 truncation_symbol = "…/"
+truncate_to_repo = false
 
 [git_branch]
 format = "\\([$branch]($style)\\) "
