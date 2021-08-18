@@ -1,5 +1,19 @@
 . ~/.shell/plugins/bash_completion.sh
 
+# Show SSL certificate expiration of a given domain
+certdate() {
+  if [ -z "${1}" ]; then
+    echo "ERROR: No domain specified."
+    return 1
+  fi
+
+  local domain="${1}"
+  echo "Testing ${domain}…"
+  echo
+
+  echo | openssl s_client -connect "${domain}:443" 2> /dev/null | openssl x509 -dates -noout
+}
+
 # Show all the names (CNs and SANs) listed in the SSL certificate of a given domain
 certnames() {
   if [ -z "${1}" ]; then
