@@ -9,6 +9,7 @@ alias rates="curl rate.sx"
 alias reload="source ~/.bash_profile"
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 alias ssup='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
+alias weather="wttr"
 alias :q="exit"
 
 # Colored
