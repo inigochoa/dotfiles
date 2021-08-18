@@ -17,6 +17,7 @@
     ~/.shell:
     ~/.wallpapers:
     ~/.config/bat/config: shell/plugins/bat.conf
+    ~/.config/starship.toml: shell/plugins/starship.toml
 
 - shell:
     - cat ~/.shell/gterminal.profiles | dconf load /org/gnome/terminal/

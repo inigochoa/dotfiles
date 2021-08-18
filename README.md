@@ -23,6 +23,7 @@ My personal dotfiles. Use them at your own risk.
 
 * [bottom]
 * [exa]
+* [starship]
 * [tokei]
 
 ## Installing
@@ -50,4 +51,5 @@ recommended to store them in **shell_local_before** or **bashrc_local_before**
 [fetch-master 6000]: https://github.com/anhsirk0/fetch-master-6000
 [bottom]: https://github.com/ClementTsang/bottom
 [exa]: https://github.com/ogham/exa
+[starship]: https://starship.rs/
 [tokei]: https://github.com/XAMPPRocky/tokei
