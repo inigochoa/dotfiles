@@ -74,11 +74,6 @@ dice() {
   printf '\n|_________|\n'
 }
 
-# devilbox-cli - https://github.com/inigochoa/devilbox-cli
-if [ -f ~/.shell/plugins/devilbox-cli/devilbox.sh ]; then
-  . ~/.shell/plugins/devilbox-cli/devilbox.sh
-fi
-
 # Empty a file
 empty() {
   if [ 0 -eq $# ]; then
