@@ -86,6 +86,9 @@ alias please='sudo "$BASH" -c "$(history -p !!)"'
 alias poweroff="sudo /sbin/poweroff"
 alias reboot="sudo /sbin/reboot"
 alias shutdown="sudo /sbin/shutdown"
+if [ -f /usr/bin/nitrogen ] && [ -d "$HOME/.wallpapers" ]; then
+  alias wallpaper="nitrogen --save --set-auto --random $HOME/.wallpapers"
+fi
 ## Status
 ### bottom - https://github.com/ClementTsang/bottom
 if [ -f ~/.cargo/bin/btm ]; then
