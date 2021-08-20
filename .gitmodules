@@ -2,3 +2,6 @@
 	path = .dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "dotfiles/wallpapers"]
+	path = dotfiles/wallpapers
+	url = https://github.com/inigochoa/wallpapers

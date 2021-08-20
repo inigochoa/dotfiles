@@ -15,6 +15,7 @@
     ~/.gitignore_global:
     ~/.scripts:
     ~/.shell:
+    ~/.wallpapers: wallpapers/images
     ~/.config/bat/config: shell/plugins/bat.conf
     ~/.config/starship.toml: shell/plugins/starship.toml
 
