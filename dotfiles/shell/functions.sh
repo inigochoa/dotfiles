@@ -133,6 +133,11 @@ httpcode() {
   curl  -o /dev/null -sL -w "%{http_code}\n" -I "$1"
 }
 
+# Set exif artist data
+imageartist() {
+  exiftool -overwrite_original -artist="$1" "$2"
+}
+
 # Create a directory and cd inside
 mkd() {
   mkdir "$@" && cd "$_";
