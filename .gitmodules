@@ -5,3 +5,5 @@
 [submodule "dotfiles/wallpapers"]
 	path = dotfiles/wallpapers
 	url = https://github.com/inigochoa/wallpapers
+	branch = main
+	ignore = dirty
