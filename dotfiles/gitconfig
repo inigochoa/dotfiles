@@ -82,3 +82,6 @@
 
 [color]
 	ui = true
+
+[includeIf "gitdir:~/work/"]
+	path = ~/work/.gitconfig
