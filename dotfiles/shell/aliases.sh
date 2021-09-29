@@ -77,7 +77,7 @@ alias fastping="ping -c 100 -s 2"
 
 # Node
 alias npkill="npx npkill ."
-alias serve="npx serve"
+alias serve="npx light-server -w \"*\" -s"
 alias twconf="npx tailwind-config-viewer -o"
 
 # System
