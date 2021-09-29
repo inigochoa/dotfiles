@@ -199,6 +199,23 @@ transfer() {
   echo -e "\n"
 }
 
+# Call a URL X number of times in sequence.
+urlsequence() {
+  local LOOP=0
+
+  [[ $1 != ?(-)+([0-9]) ]] && echo "$1 is not a number" && return 1
+
+  [[ $2 != http?(s)://*.*/ ]] && echo "$2 is not a valid URL" && return 1
+
+  while [ $LOOP -lt $1 ]
+  do
+    local NOW=$(date +"%T")
+    local LOOP=$(( $LOOP + 1 ))
+
+    curl -sI -o /dev/null -w "$NOW - $LOOP - %{http_code}\n" "$2$LOOP"
+  done
+}
+
 # Weather report
 wttr() {
   local request="wttr.in/${1}"
