@@ -207,6 +207,8 @@ urlsequence() {
 
   [[ $2 != http?(s)://*.*/ ]] && echo "$2 is not a valid URL" && return 1
 
+  [[ $3 == ?(-)+([0-9]) ]] && LOOP=$3
+
   while [ $LOOP -lt $1 ]
   do
     local NOW=$(date +"%T")
