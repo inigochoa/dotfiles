@@ -1,5 +1,12 @@
 . ~/.shell/plugins/bash_completion.sh
 
+# Show bash aliases
+aliases() {
+  for a in "${!BASH_ALIASES[@]}"; do
+    printf "alias: %-8s defined as: %s\n" "$a" "${BASH_ALIASES[$a]}";
+  done
+}
+
 # Show SSL certificate expiration of a given domain
 certdate() {
   if [ -z "${1}" ]; then
