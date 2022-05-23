@@ -17,7 +17,7 @@
     ~/.scripts:
     ~/.shell:
     ~/.local/share/backgrounds: wallpapers/images
-    ~/.config/bat/config: shell/plugins/bat.conf
+    ~/.config/bat: config/bat
     ~/.config/starship.toml: shell/plugins/starship.toml
 
 - shell:
