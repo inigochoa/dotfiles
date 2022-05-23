@@ -64,6 +64,9 @@ if [ -f ~/.cargo/bin/tokei ]; then
   alias tokei="tokei --hidden"
 fi
 
+# git-cliff - https://github.com/orhun/git-cliff
+alias gitcliff="git-cliff --config ~/.cliff.toml --output CHANGELOG.md --unreleased"
+
 # Internet
 alias hosts="sudo $EDITOR /etc/hosts"
 alias ip="curl ifconfig.co/"

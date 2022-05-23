@@ -11,6 +11,7 @@
     ~/.bash_logout:
     ~/.bash_profile:
     ~/.bashrc:
+    ~/.cliff.toml:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.scripts:
