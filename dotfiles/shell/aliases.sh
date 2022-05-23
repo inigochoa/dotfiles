@@ -1,6 +1,7 @@
 # Bash
 alias copy="xclip -selection clipboard"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
+alias histstats="history | awk '{CMD[\$2]++;count++;}END { for (a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v './' | column -c3 -s ' ' -t | sort -nr | nl |  head -n10"
 alias parrot="curl parrot.live"
 alias paste="xclip -selection clipboard -o"
 alias paths='echo -e ${PATH//:/\\n}'
@@ -78,6 +79,7 @@ alias ping="ping -c 5"
 alias fastping="ping -c 100 -s 2"
 
 # Node
+alias card="npx inigochoa"
 alias npkill="npx npkill ."
 alias serve="npx light-server -w \"*\" -s"
 alias twconf="npx tailwind-config-viewer -o"
