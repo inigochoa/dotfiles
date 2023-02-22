@@ -21,6 +21,7 @@ My personal dotfiles. Use them at your own risk.
 #### rust
 
 * [bottom]
+* [delta]
 * [exa]
 * [starship]
 * [tokei]
@@ -48,6 +49,7 @@ recommended to store them in **shell_local_before** or **bashrc_local_before**
 [bat]: https://github.com/sharkdp/bat
 [fetch-master 6000]: https://github.com/anhsirk0/fetch-master-6000
 [bottom]: https://github.com/ClementTsang/bottom
+[delta]: https://dandavison.github.io/delta/introduction.html
 [exa]: https://github.com/ogham/exa
 [starship]: https://starship.rs/
 [tokei]: https://github.com/XAMPPRocky/tokei

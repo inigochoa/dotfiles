@@ -85,3 +85,22 @@
 
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig
+
+[core]
+	pager = delta --dark
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	features = decorations
+	navigate = true
+	syntax-theme = Dracula
+	line-numbers = true
+	side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
