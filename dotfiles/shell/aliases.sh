@@ -51,8 +51,8 @@ alias cp="cp -riv"
 alias ln="ln -iv"
 alias mv="mv -iv"
 ## Editors - https://github.com/sharkdp/bat
-if [ -f /usr/bin/bat ]; then
-  alias cat="bat"
+if [ -f /usr/bin/batcat ]; then
+  alias cat="batcat"
 fi
 alias nano="nano -c"
 ## Safety
