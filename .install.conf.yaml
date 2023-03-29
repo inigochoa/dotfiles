@@ -20,6 +20,7 @@
     ~/.config/bat: config/bat
     ~/.config/bottom: config/bottom
     ~/.config/conky: config/conky
+    ~/.config/erdtree: config/erdtree
     ~/.config/starship.toml: shell/plugins/starship.toml
 
 - shell:

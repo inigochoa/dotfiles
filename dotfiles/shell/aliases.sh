@@ -44,6 +44,8 @@ else
   alias la='ls -A'
   alias l='ls -CF'
 fi
+## tree - https://github.com/solidiquis/erdtree
+alias tree="et"
 
 # Files
 ## Confirmations
