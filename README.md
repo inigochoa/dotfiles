@@ -17,6 +17,7 @@ My personal dotfiles. Use them at your own risk.
 #### GitHub
 
 * [fetch-master 6000]
+* [bat-extras]
 
 #### rust
 
@@ -48,6 +49,7 @@ recommended to store them in **shell_local_before** or **bashrc_local_before**
 [dotbot]: https://github.com/anishathalye/dotbot
 [bat]: https://github.com/sharkdp/bat
 [fetch-master 6000]: https://github.com/anhsirk0/fetch-master-6000
+[bat-extras]: https://github.com/eth-p/bat-extras
 [bottom]: https://github.com/ClementTsang/bottom
 [delta]: https://dandavison.github.io/delta/introduction.html
 [exa]: https://github.com/ogham/exa
