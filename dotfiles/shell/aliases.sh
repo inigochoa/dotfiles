@@ -55,6 +55,12 @@ alias mv="mv -iv"
 ## Editors - https://github.com/sharkdp/bat
 if [ -f /usr/bin/batcat ]; then
   alias cat="batcat"
+
+  if [ -f /usr/local/bin/batman ]; then
+    alias man='batman'
+  else
+    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+  fi
 fi
 alias nano="nano -c"
 ## Safety
