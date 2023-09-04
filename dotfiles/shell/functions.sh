@@ -150,6 +150,13 @@ mkd() {
   mkdir "$@" && cd "$_";
 }
 
+# Send a telegram message
+ntfy() {
+  local text=${1// /%20}
+
+  curl -s -D /dev/null -o /dev/null "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?chat_id=$TELEGRAM_CHAT_ID&text=$text"
+}
+
 # Remove from $PATH
 path_remove() {
   PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
