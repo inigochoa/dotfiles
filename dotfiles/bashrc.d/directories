@@ -1,0 +1,49 @@
+# ~/.bashrc.d/directories
+
+## cd
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
+
+## Functions
+### Create a directory and cd inside
+mkd() {
+  mkdir "$@" && cd "$_";
+}
+
+## ls
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+## eza - https://github.com/eza-community/eza
+## *goes after ls to override default aliases
+if command -v eza >/dev/null 2>&1; then
+  alias eza="eza --classify --grid --group --group-directories-first --icons=always"
+  alias l="eza"
+  alias la="l --all"
+  alias ll="la --binary --extended --git --header --long"
+  alias ls="l"
+  alias lt="la --git-ignore --tree"
+  alias lt1="lt --level=1"
+  alias lt2="lt --level=2"
+  alias lt3="lt --level=3"
+  alias lt4="lt --level=4"
+  alias lt5="lt --level=5"
+  alias l.="la | egrep '^\.'"
+  alias tree="lt"
+  alias tree1="lt --level=1"
+  alias tree2="lt --level=2"
+  alias tree3="lt --level=3"
+  alias tree4="lt --level=4"
+  alias tree5="lt --level=5"
+fi
+
+## zoxide - https://github.com/ajeetdsouza/zoxide
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init --cmd cd bash)"
+fi

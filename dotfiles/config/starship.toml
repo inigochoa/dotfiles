@@ -1,0 +1,41 @@
+add_newline = false
+
+[character]
+error_symbol = "[✗](red)"
+success_symbol = "[➜](green)"
+
+[cmd_duration]
+format = "took [$duration]($style)"
+min_time = 0
+style = "bright-blue"
+
+[directory]
+format = "[in](green) [$path]($style)[$read_only]($read_only_style) "
+style = "yellow"
+truncation_length = 2
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[git_branch]
+format = "\\([$branch]($style)\\) "
+style = "dimmed white"
+
+[git_commit]
+disabled = true
+
+[package]
+disabled = true
+
+[hostname]
+format = "[at](green) [$hostname]($style) "
+ssh_only = false
+style = "dimmed bright-purple"
+
+[username]
+format = "[#](blue) [$user]($style) "
+show_always = true
+style_user = "cyan"
+
+[memory_usage]
+disabled = false
+
