@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+## Update submodules to the remote branch
+git submodule update --remote
+
+## Commit submodule changes
+git commit -m 'chore(dotbot): modules updated' `git submodule | grep '^+' | cut -d ' ' -f 2`
+
+## Install submodules recursively
+git submodule update --init --recursive
