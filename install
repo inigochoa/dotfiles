@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+## Directories
+DOTBOT_DIR=".dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+
+## Sync submodules
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+
+## Install submodules recursively
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+## Run dotbot
+"${BASEDIR}/${DOTBOT_DIR}/bin/dotbot" \
+  -d "${BASEDIR}/dotfiles" \
+  -c .install.conf.yaml \
+  -p "${BASEDIR}/.dotbot-omnipkg/omnipkg.py" \
+  "${@}"
