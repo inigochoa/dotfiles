@@ -1,0 +1,18 @@
+# ~/.bashrc.d/node
+
+## Tools
+alias card="pnpx @inigochoa/card"
+alias npkill="pnpx npkill ."
+alias serve="pnpx serve"
+
+## nvm - https://github.com/nvm-sh/nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+## pnpm - https://pnpm.io/es/
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac

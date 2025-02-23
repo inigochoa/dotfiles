@@ -1,0 +1,59 @@
+# ~/.bashrc.d/bash
+
+## atuin - https://atuin.sh/
+if command -v atuin >/dev/null 2>&1; then
+  . "$HOME/.atuin/bin/env"
+  eval "$(atuin init bash)"
+fi
+
+## Bash
+alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
+alias histstats="history | awk '{CMD[\$2]++;count++;}END { for (a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v './' | column -c3 -s ' ' -t | sort -nr | nl |  head -n10"
+alias paths='echo -e ${PATH//:/\\n}'
+alias reload="source ~/.bash_profile"
+
+## Copy & paste
+alias copy="xclip -selection clipboard"
+alias pbcopy="xsel --input --clipboard"
+alias pbpaste="xsel --output --clipboard"
+alias paste="xclip -selection clipboard -o"
+
+## Editor
+export EDITOR=vim
+
+## Functions
+### Show bash aliases
+aliases() {
+  for a in "${!BASH_ALIASES[@]}"; do
+    printf "alias: %-8s defined as: %s\n" "$a" "${BASH_ALIASES[$a]}";
+  done
+}
+
+### Cheat sheet
+cheat() {
+  local request="cheat.sh/${1}"
+  [ "$(tput cols)" -lt 125 ] && request+='?n'
+  curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+}
+
+### Append to $PATH
+path_append() {
+  path_remove "$1"
+  PATH="${PATH:+"$PATH:"}$1"
+}
+
+### Prepend to $PATH
+path_prepend() {
+  path_remove "$1"
+  PATH="$1${PATH:+":$PATH"}"
+}
+
+### Remove from $PATH
+path_remove() {
+  PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
+}
+
+## Grep
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias grep="grep --color=auto"

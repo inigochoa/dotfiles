@@ -1,0 +1,33 @@
+# ~/.bashrc.d/git
+
+## Functions
+### Clone a git repository and cd inside
+gclone() {
+  git clone "$1" && cd "$(basename "$1" .git)"
+}
+
+### Sync a repository with base remote
+gsync() {
+  branch=${1:-$(git symbolic-ref --short HEAD)}
+  echo "Updating branch $branch..."
+
+  git pull origin "$branch" || { echo "Error while pulling"; return 1; }
+  git fetch base || { echo "Error fetching from base"; return 1; }
+  git merge base/"$branch"
+  if [ $? -eq 0 ]; then
+    git push origin "$branch"
+  else
+    echo "Conflict found, opening VS Code..."
+    code .
+  fi
+}
+
+## git-cliff - https://github.com/orhun/git-cliff
+alias gitcliff="pnpx git-cliff@latest --output CHANGELOG.md --unreleased"
+
+## onefetch - https://onefetch.dev/
+if command -v onefetch >/dev/null 2>&1; then
+  alias git-summary="onefetch"
+  alias git-sm="onefetch"
+  alias gsm="onefetch"
+fi

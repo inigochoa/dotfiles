@@ -1,0 +1,66 @@
+- defaults:
+    link:
+        create: true
+        force: true
+        relink: true
+
+- clean: ['~']
+
+- shell:
+    -
+        command: sudo dnf copr enable atim/bottom -y
+        description: Add atim/bottom
+        stdout: true
+    -
+        command: sudo dnf copr enable varlad/onefetch
+        description: Add varlad/onefetch
+        stdout: true
+    -
+        command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+        description: Install NVM
+        stdout: true
+    -
+        command: curl -fsSL https://get.pnpm.io/install.sh | sh -
+        description: Install pnpm
+        stdout: true
+    -
+        command: curl -sS https://starship.rs/install.sh | sh
+        description: Install Starship
+        stdout: true
+
+- omnipkg:
+    - upgrade
+    - install: [
+        bat,
+        bottom,
+        eza,
+        git-delta,
+        onefetch,
+        screenfetch,
+        tealdeer,
+        zoxide
+    ]
+
+- link:
+    ## bash files
+    ~/.bashrc.d:
+    ~/.bash-preexec.sh:
+    ~/.bash_logout:
+    ~/.bash_profile:
+    ~/.bashrc:
+
+    ## git files
+    ~/.gitconfig:
+    ~/.gitignore_global:
+
+    ## config files
+    ~/.config/atuin: config/atuin
+    ~/.config/bat: config/bat
+    ~/.config/bottom: config/bottom
+    ~/.config/git-cliff: config/git-cliff
+    ~/.config/tealdeer: config/tealdeer
+    ~/.config/starship.toml: config/starship.toml
+
+- shell:
+    - . $HOME/.bashrc
+    - source $HOME/.bashrc

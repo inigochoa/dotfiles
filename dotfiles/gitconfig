@@ -1,0 +1,91 @@
+[alias]
+  # Abbreviations
+  br = branch
+  co = checkout
+  cp = cherry-pick
+  mt = mergetool
+
+  # Alias commands
+  la = "!git config -l | grep alias | cut -c 7-"
+  list-alias = "!git la"
+
+  # Branches
+  cof = "!cb() { git checkout $1 -- $2; }; cb"
+  mb = checkout -B
+
+  # Commits in increasing detail
+  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lll = log -u
+
+  # Commits per author
+  who = shortlog -n -s --no-merges
+
+  # Commiting
+  c = commit
+  ca = commit --amend --no-edit
+  cm = "!cim() { git commit -m \"$1\"; }; cim"
+
+  # Diffs
+  diffc = diff --cached HEAD^
+  diffw = diff --color --word-diff
+
+  # Gerrit
+  draft = "!draft() { git push origin HEAD:refs/drafts/$1; }; draft"
+  review = "!review() { git push origin HEAD:refs/for/$1; }; review"
+
+  # Onefetch
+  onefetch = !git summary
+  sm = !git summary
+  stats = !git summary
+  summary = "!which onefetch && onefetch"
+
+  # Permissions
+  addx = update-index --chmod=+x
+
+  # Rebase
+  r = rebase
+  ra = rebase --abort
+  rc = rebase --continue
+  ri = "!ri() { git rebase -i HEAD~$1; }; ri"
+
+  # Reset
+  re = reset
+  re1 = reset HEAD^
+  rec = !git reh && git clean -fd
+  reh = reset --hard
+
+  # Search
+  f = "!git ls-files | grep --color -i"
+  grep = grep -Ii
+
+  # Staging
+  aa = !git sa
+  rmall = "!git status -s | grep '^ D' | awk -F' ' '{ print $2 }' | xargs git rm"
+  s = "!stage() { git add `git st | sed -n $1p | awk -F' ' '{ print $3 }'`; git st; }; stage"
+  sa = !git add -u && git add . && git st
+  st = "!git status -s | cat -n"
+  u = "!unstage() { git reset HEAD `git st | sed -n $1p | awk -F' ' '{ print $3 }'`; git st; }; unstage"
+
+[color]
+  ui = true
+
+[core]
+  pager = delta
+
+[delta]
+  dark = true
+  features = decorations
+  line-numbers = true
+  navigate = true
+  side-by-side = true
+  syntax-theme = Dracula
+
+[diff]
+  colorMoved = default
+
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  conflictstyle = diff3

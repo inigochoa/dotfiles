@@ -1,0 +1,114 @@
+# ~/.bashrc.d/internet
+
+## Functions
+### Show SSL certificate expiration of a given domain
+certdate() {
+  if [ -z "${1}" ]; then
+    echo "ERROR: No domain specified."
+    return 1
+  fi
+
+  local domain="${1}"
+  echo "Testing ${domain}…"
+  echo
+
+  echo | openssl s_client -connect "${domain}:443" 2> /dev/null | openssl x509 -dates -noout
+}
+
+### Show all the names (CNs and SANs) listed in the SSL certificate of a given domain
+certnames() {
+  if [ -z "${1}" ]; then
+    echo "ERROR: No domain specified."
+    return 1
+  fi
+
+  local domain="${1}"
+  echo "Testing ${domain}…"
+  echo
+
+  local tmp=$(echo -e "GET / HTTP/1.0\nEOT" \
+  | openssl s_client -connect "${domain}:443" -servername "${domain}" 2>&1)
+
+  if [[ "${tmp}" = *"-----BEGIN CERTIFICATE-----"* ]]; then
+    local certText=$(echo "${tmp}" \
+      | openssl x509 -text -certopt "no_aux, no_header, no_issuer, no_pubkey, \
+      no_serial, no_sigdump, no_signame, no_validity, no_version");
+
+    echo "Common Name:"
+    echo
+
+    echo "${certText}" | grep "Subject:" | sed -e "s/^.*CN=//" | sed -e "s/\/emailAddress=.*//"
+    echo
+
+    echo "Subject Alternative Name(s):"
+    echo
+
+    echo "${certText}" | grep -A 1 "Subject Alternative Name:" \
+      | sed -e "2s/DNS://g" -e "s/ //g" | tr "," "\n" | tail -n +2
+  else
+    echo "ERROR: Certificate not found.";
+  fi;
+}
+
+### Get HTTP code of a site
+httpcode() {
+  curl  -o /dev/null -sL -w "%{http_code}\n" -I "$1"
+}
+
+### QR encode a text
+qr() {
+  local request="qrenco.de/${1}"
+  [ "$(tput cols)" -lt 125 ] && request+='?n'
+  curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+}
+
+### Call a URL X number of times in sequence.
+urlsequence() {
+  local url="$1"
+  local loops="$2"
+
+  if [[ -z "$url" || -z "$loops" ]]; then
+    echo "Usage: urlsequence <url> <loops>"
+    return 1
+  fi
+
+  if [[ ! "$url" =~ ^https?:// ]]; then
+    echo "Error: The URL must begin with http:// or https://"
+    return 1
+  fi
+
+  if ! [[ "$num" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: The loops number must be greater than 0."
+    return 1
+  fi
+
+  read -p "Do you want to append the loop to the URL? (y/n): " answ
+
+  for (( i=1; i<=num; i++ )); do
+    NOW=$(date +"%T")
+    if [[ "$answ" =~ ^[yY]$ ]]; then
+      target_url="${url}${i}"
+    else
+      target_url="$url"
+    fi
+    curl -sI -o /dev/null -w "${NOW} - ${i} - %{http_code}\n" "$target_url"
+  done
+}
+
+## Ping
+alias fastping="ping -c 100 -s 2"
+alias ping="ping -c 5"
+
+## Self
+alias hosts="sudo $EDITOR /etc/hosts"
+alias ip="curl https://ifconfig.co/"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+
+## tealdeer - https://github.com/tealdeer-rs/tealdeer
+if command -v tldr >/dev/null 2>&1; then
+  alias man="tldr"
+fi
+
+## Tools
+alias nmap="sudo -E nmap"
+alias wget="wget -c"

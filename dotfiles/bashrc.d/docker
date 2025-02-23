@@ -1,0 +1,5 @@
+# ~/.bashrc.d/docker
+
+## Markdown to PDF
+alias mdtopdf='docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf mdtopdf'
+alias w-mdtopdf='docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf  w-mdtopdf'

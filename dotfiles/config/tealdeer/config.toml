@@ -1,0 +1,38 @@
+[directories]
+
+[display]
+compact = false
+use_pager = true
+
+[updates]
+auto_update = true
+auto_update_interval_hours = 720
+
+[style.command_name]
+bold = false
+foreground = "cyan"
+italic = false
+underline = false
+
+[style.description]
+bold = false
+italic = false
+underline = false
+
+[style.example_code]
+bold = false
+foreground = "cyan"
+italic = false
+underline = false
+
+[style.example_text]
+bold = false
+foreground = "green"
+italic = false
+underline = false
+
+[style.example_variable]
+bold = false
+foreground = "cyan"
+italic = false
+underline = true

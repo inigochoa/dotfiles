@@ -1,0 +1,25 @@
+# ~/.bashrc.d/prompt
+
+## Default prompt
+COLOR_BLUE='\[\e[34m\]'
+COLOR_CYAN='\[\e[36m\]'
+COLOR_DEFAULT='\[\e[39m\]'
+COLOR_GRAY='\e[38;5;246m'
+COLOR_GREEN='\[\e[32m\]'
+COLOR_MAGENTA='\[\e[35m\]'
+COLOR_RED='\[\e[31m\]'
+COLOR_YELLOW='\[\e[33m\]'
+
+__parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PROMPT_DIRTRIM=3
+PS1="${COLOR_BLUE}#${COLOR_DEFAULT} ${COLOR_CYAN}\\u${COLOR_DEFAULT} ${COLOR_GREEN}at${COLOR_DEFAULT} ${COLOR_MAGENTA}\\h${COLOR_DEFAULT} ${COLOR_GREEN}in${COLOR_DEFAULT} ${COLOR_YELLOW}\w${COLOR_DEFAULT} ${COLOR_GRAY}\$(__parse_git_branch)${COLOR_DEFAULT}\n\$(if [ \$? -ne 0 ]; then echo \"${COLOR_RED}!${COLOR_DEFAULT} \"; fi)${COLOR_BLUE}>${COLOR_DEFAULT} "
+PS2="${COLOR_BLUE}>${COLOR_DEFAULT} "
+
+# starship - https://starship.rs/
+if command -v starship >/dev/null 2>&1; then
+  alias ssup='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
+  eval "$(starship init bash)"
+fi
