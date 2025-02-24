@@ -1,5 +1,6 @@
 # Compiled source
 *.class
+*.com
 *.dll
 *.exe
 *.o
@@ -20,11 +21,25 @@
 *.sqlite
 
 # OS generated files
-.DS_Store
-.DS_Store?
 ._*
+.DS_Store*
 .Spotlight-V100
 .Trashes
-Icon?
 ehthumbs.db
+Icon?
 Thumbs.db
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Temporary files
+*.swo
+*.swp
+*~
