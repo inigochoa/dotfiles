@@ -9,6 +9,7 @@ with [Dotbot] for a smooth installation process.
 - [atuin]: Modern shell history with search.
 - [bat]: A `cat` clone with syntax highlighting.
 - [bottom]: A graphical system monitor.
+- [dry]: A terminal application to manage and monitor Docker containers.
 - [eza]: A modern replacement for `ls`.
 - [git-cliff]: A customizable changelog generator.
 - [git-delta]: A syntax-highlighting pager for git diffs.
@@ -94,6 +95,7 @@ pull request. Let's keep these dotfiles evolving!
 [atuin]: https://atuin.sh/
 [bat]: https://github.com/sharkdp/bat
 [bottom]: https://github.com/ClementTsang/bottom
+[dry]: https://moncho.github.io/dry/
 [eza]: https://github.com/eza-community/eza
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta

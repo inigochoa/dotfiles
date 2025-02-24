@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+## Install dry
+if ! command -v dry >/dev/null 2>&1; then
+  curl -sSf https://moncho.github.io/dry/dryup.sh | sudo sh
+  sudo chmod 755 /usr/local/bin/dry
+fi
+
 ## Install NVM
 if [ ! -d "$HOME/.nvm" ]; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
