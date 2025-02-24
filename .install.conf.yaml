@@ -8,24 +8,16 @@
 
 - shell:
     -
-        command: sudo dnf copr enable atim/bottom -y
-        description: Add atim/bottom
+        command: ../.dotbot-scripts/dnf-repositories.sh
+        description: Enable DNF repositories
+        quiet: true
+        stderr: true
         stdout: true
     -
-        command: sudo dnf copr enable varlad/onefetch
-        description: Add varlad/onefetch
-        stdout: true
-    -
-        command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-        description: Install NVM
-        stdout: true
-    -
-        command: curl -fsSL https://get.pnpm.io/install.sh | sh -
-        description: Install pnpm
-        stdout: true
-    -
-        command: curl -sS https://starship.rs/install.sh | sh
-        description: Install Starship
+        command: ../.dotbot-scripts/sh-installs.sh
+        description: Install from shell
+        quiet: true
+        stderr: true
         stdout: true
 
 - omnipkg:
