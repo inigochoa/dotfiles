@@ -70,8 +70,27 @@
 [color]
   ui = true
 
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+
 [core]
+  editor = vim
   pager = delta
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [delta]
   dark = true
@@ -81,8 +100,29 @@
   side-by-side = true
   syntax-theme = Dracula
 
+[delta "decorations"]
+	minus-style = red bold normal
+	plus-style = green bold normal
+	minus-emph-style = white bold red
+	minus-non-emph-style = red bold normal
+	plus-emph-style = white bold green
+	plus-non-emph-style = green bold normal
+	file-style = yellow bold none
+	file-decoration-style = yellow box
+	hunk-header-style = magenta bold
+	hunk-header-decoration-style = magenta box
+	minus-empty-line-marker-style = normal normal
+	plus-empty-line-marker-style = normal normal
+	line-numbers-right-format = "{np:^4}│ "
+
 [diff]
   colorMoved = default
+
+[include]
+  path = ~/.gitconfig-local
+
+[init]
+  defaultBranch = main
 
 [interactive]
   diffFilter = delta --color-only
