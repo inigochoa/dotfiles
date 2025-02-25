@@ -21,8 +21,3 @@ if [ -d ~/.bashrc.d ]; then
   done
 fi
 unset rc
-
-## Source preexec functions
-if [ -f ~/.bash-preexec.sh ]; then
-  . ~/.bash-preexec.sh
-fi

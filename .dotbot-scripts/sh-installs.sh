@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+## Install Atuin
+if ! command -v atuin >/dev/null 2>&1; then
+  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+fi
+
 ## Install dry
 if ! command -v dry >/dev/null 2>&1; then
   curl -sSf https://moncho.github.io/dry/dryup.sh | sudo sh
