@@ -26,9 +26,9 @@
         bat,
         bottom,
         eza,
+        fastfetch,
         git-delta,
         onefetch,
-        screenfetch,
         tealdeer,
         zoxide
     ]

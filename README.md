@@ -11,10 +11,10 @@ with [Dotbot] for a smooth installation process.
 - [bottom]: A graphical system monitor.
 - [dry]: A terminal application to manage and monitor Docker containers.
 - [eza]: A modern replacement for `ls`.
+- [fastfetch]: A system info fetcher.
 - [git-cliff]: A customizable changelog generator.
 - [git-delta]: A syntax-highlighting pager for git diffs.
 - [onefetch]: A tool to display repository information.
-- [screenfetch]: A system info fetcher.
 - [starship]: A minimal, blazing-fast, and customizable prompt.
 - [tealdeer]: A fast implementation of `TLDR`.
 - [zoxide]: A smarter way to navigate your filesystem.
@@ -97,10 +97,10 @@ pull request. Let's keep these dotfiles evolving!
 [bottom]: https://github.com/ClementTsang/bottom
 [dry]: https://moncho.github.io/dry/
 [eza]: https://github.com/eza-community/eza
+[fastfetch]: https://github.com/fastfetch-cli/fastfetch
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta
 [onefetch]: https://onefetch.dev/
-[screenfetch]: https://github.com/KittyKatt/screenFetch
 [starship]: https://starship.rs/
 [tealdeer]: https://github.com/tealdeer-rs/tealdeer
 [zoxide]: https://github.com/ajeetdsouza/zoxide
