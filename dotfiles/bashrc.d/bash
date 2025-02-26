@@ -18,12 +18,6 @@ alias histstats="history | awk '{CMD[\$2]++;count++;}END { for (a in CMD)print C
 alias paths='echo -e ${PATH//:/\\n}'
 alias reload="source ~/.bash_profile"
 
-## Copy & paste
-alias copy="xclip -selection clipboard"
-alias pbcopy="xsel --input --clipboard"
-alias pbpaste="xsel --output --clipboard"
-alias paste="xclip -selection clipboard -o"
-
 ## Editor
 export EDITOR=vim
 
