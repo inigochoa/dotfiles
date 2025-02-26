@@ -27,6 +27,7 @@
         bottom,
         eza,
         fastfetch,
+        fzf,
         git-delta,
         onefetch,
         tealdeer,

@@ -12,6 +12,7 @@ with [Dotbot] for a smooth installation process.
 - [dry]: A terminal application to manage and monitor Docker containers.
 - [eza]: A modern replacement for `ls`.
 - [fastfetch]: A system info fetcher.
+- [fzf]: A command-line fuzzy finder.
 - [git-cliff]: A customizable changelog generator.
 - [git-delta]: A syntax-highlighting pager for git diffs.
 - [onefetch]: A tool to display repository information.
@@ -98,6 +99,7 @@ pull request. Let's keep these dotfiles evolving!
 [dry]: https://moncho.github.io/dry/
 [eza]: https://github.com/eza-community/eza
 [fastfetch]: https://github.com/fastfetch-cli/fastfetch
+[fzf]: https://github.com/junegunn/fzf
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta
 [onefetch]: https://onefetch.dev/
