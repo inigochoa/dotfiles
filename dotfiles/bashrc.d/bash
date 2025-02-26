@@ -53,6 +53,12 @@ path_remove() {
   PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
 }
 
+## Fuck commands
+alias fuck='sudo "$BASH" -c "$(history -p !!)"'
+alias fucking=sudo
+alias please=fuck
+alias plz=please
+
 ## fzf - https://github.com/junegunn/fzf
 if command -v fzf >/dev/null 2>&1; then
   ### ssh selection

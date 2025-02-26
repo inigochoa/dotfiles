@@ -2,7 +2,6 @@
 
 ## Actions
 alias halt="sudo /sbin/halt"
-alias please='sudo "$BASH" -c "$(history -p !!)"'
 alias poweroff="sudo /sbin/poweroff"
 alias reboot="sudo /sbin/reboot"
 alias shutdown="sudo /sbin/shutdown"
