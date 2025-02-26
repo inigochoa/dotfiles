@@ -76,6 +76,4 @@ if command -v fzf >/dev/null 2>&1; then
 fi
 
 ## Grep
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
 alias grep="grep --color=auto"
