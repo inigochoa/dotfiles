@@ -21,7 +21,6 @@
         stdout: true
 
 - omnipkg:
-    - upgrade
     - install: [
         bat,
         bottom,
