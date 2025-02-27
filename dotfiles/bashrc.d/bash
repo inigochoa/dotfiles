@@ -62,15 +62,18 @@ alias plz=please
 ## fzf - https://github.com/junegunn/fzf
 if command -v fzf >/dev/null 2>&1; then
   ### ssh selection
-  fssh() {
-    local configs=("$HOME/.ssh/config" "$HOME/.ssh/config.d/*")
-    local hosts=$(grep -hE '^Host ' "${configs[@]}" 2>/dev/null | awk '{print $2}' | grep -vE '\*|\?' | sort -u)
+  ssh() {
+    local target="$1"
 
-    local host=$(echo "$hosts" | fzf --height=40% --reverse --prompt="SSH > " \
-      --preview="ssh -GT {} | awk '/^hostname |^user /'" --preview-window=up:2:wrap)
+    if [[ -z "$target" ]]; then
+      local configs=("$HOME/.ssh/config" "$HOME/.ssh/config.d/*")
+      local hosts=$(grep -hE '^Host ' "${configs[@]}" 2>/dev/null | awk '{print $2}' | grep -vE '\*|\?' | sort -u)
 
-    if [ -n "$host" ]; then
-      ssh "$host"
+      target=$(echo "$hosts" | fzf --height=40% --reverse --prompt="SSH > " --preview="ssh -GT {} | awk '/^hostname |^user /'" --preview-window=up:2:wrap)
+    fi
+
+    if [ -n "$target" ]; then
+      command ssh "$target" "${@:2}"
     fi
   }
 fi
