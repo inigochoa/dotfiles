@@ -8,17 +8,99 @@ gclone() {
 
 ### Sync a repository with base remote
 gsync() {
-  branch=${1:-$(git symbolic-ref --short HEAD)}
-  echo "Updating branch $branch..."
+  local branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  local stashed=false
 
-  git pull origin "$branch" || { echo "Error while pulling"; return 1; }
-  git fetch base || { echo "Error fetching from base"; return 1; }
-  git merge base/"$branch"
-  if [ $? -eq 0 ]; then
-    git push origin "$branch"
+  echo "🔄 Synchronizing branch $branch between origin and base..."
+
+  ## Save local changes
+  if ! git diff --quiet; then
+    echo "⚠️ There are uncommitted local changes. Saving with stash..."
+    git stash push -m "auto: changes before gsync at $(date)"
+
+    local stashed=true
+  fi
+
+  ## Checkout to the branch
+  if [ "$current_branch" != "$branch" ]; then
+    echo "🔀 Switching from '$current_branch' to '$branch'..."
+
+    if ! git checkout "$branch"; then
+      echo "❌ Error switching to branch '$branch'"
+
+      if [ true = "$stashed" ]; then
+        git stash pop
+      fi
+
+      return 1
+    fi
+  fi
+
+  ## Pull from origin
+  echo "⬇️ Pulling changes from origin/$branch..."
+  if ! git pull origin "$branch"; then
+    echo "❌ Error pulling changes from origin/$branch"
+
+    if [ true = "$stashed" ]; then
+      git stash pop
+    fi
+
+    return 1
+  fi
+
+  ## Fetching from base
+  echo "🔍 Fetching changes from base..."
+  if ! git fetch base; then
+    echo "❌ Error fetching changes from base"
+
+    if [ true = "$stashed" ]; then
+      git stash pop
+    fi
+
+    return 1
+  fi
+
+  ## Merge from base
+  echo "🔀 Merging changes from base/$branch..."
+  if git merge "base/$branch"; then
+    echo "✅ Merge successful. Pushing changes to origin/$branch..."
+
+    if git push origin "$branch"; then
+      echo "🎉 Synchronization completed successfully!"
+    else
+      echo "❌ Error pushing to origin/$branch"
+
+      if [ true = "$stashed" ]; then
+        git stash pop
+      fi
+
+      return 1
+    fi
   else
-    echo "Conflict found, opening VS Code..."
-    code .
+    echo "⚠️ Conflicts detected during merge."
+    echo -n "Do you want to open the editor to resolve conflicts? (y/n): "
+    read answer
+
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+      echo "🔧 Opening editor..."
+      code .
+    else
+      echo "🛑 Operation aborted by user. Running git merge --abort"
+      git merge --abort
+    fi
+  fi
+
+  ## Recover changes from stash
+  if [ true = "$stashed" ]; then
+    echo "📦 Recovering previously saved changes..."
+    git stash pop
+  fi
+
+  ## Revert to the original branch if it was different
+  if [ "$current_branch" != "$branch" ]; then
+    echo "🔙 Reverting to the original branch '$current_branch'..."
+    git checkout "$current_branch"
   fi
 }
 

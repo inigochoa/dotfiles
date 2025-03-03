@@ -21,14 +21,14 @@
         stdout: true
 
 - omnipkg:
-    - upgrade
     - install: [
         bat,
         bottom,
         eza,
+        fastfetch,
+        fzf,
         git-delta,
         onefetch,
-        screenfetch,
         tealdeer,
         zoxide
     ]

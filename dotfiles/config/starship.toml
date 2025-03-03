@@ -23,19 +23,18 @@ style = "dimmed white"
 [git_commit]
 disabled = true
 
-[package]
-disabled = true
-
 [hostname]
 format = "[at](green) [$hostname]($style) "
 ssh_only = false
 style = "dimmed bright-purple"
 
+[memory_usage]
+disabled = false
+
+[package]
+disabled = true
+
 [username]
 format = "[#](blue) [$user]($style) "
 show_always = true
 style_user = "cyan"
-
-[memory_usage]
-disabled = false
-

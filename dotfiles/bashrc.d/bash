@@ -1,8 +1,14 @@
 # ~/.bashrc.d/bash
 
 ## atuin - https://atuin.sh/
-if command -v atuin >/dev/null 2>&1; then
-  . "$HOME/.atuin/bin/env"
+if [ -d ~/.atuin ]; then
+  . ~/.atuin/bin/env
+
+  ## Source preexec functions
+  if [ -f ~/.bash-preexec.sh ]; then
+    . ~/.bash-preexec.sh
+  fi
+
   eval "$(atuin init bash)"
 fi
 
@@ -11,12 +17,6 @@ alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias histstats="history | awk '{CMD[\$2]++;count++;}END { for (a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v './' | column -c3 -s ' ' -t | sort -nr | nl |  head -n10"
 alias paths='echo -e ${PATH//:/\\n}'
 alias reload="source ~/.bash_profile"
-
-## Copy & paste
-alias copy="xclip -selection clipboard"
-alias pbcopy="xsel --input --clipboard"
-alias pbpaste="xsel --output --clipboard"
-alias paste="xclip -selection clipboard -o"
 
 ## Editor
 export EDITOR=vim
@@ -53,7 +53,30 @@ path_remove() {
   PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
 }
 
+## Fuck commands
+alias fuck='sudo "$BASH" -c "$(history -p !!)"'
+alias fucking=sudo
+alias please=fuck
+alias plz=please
+
+## fzf - https://github.com/junegunn/fzf
+if command -v fzf >/dev/null 2>&1; then
+  ### ssh selection
+  ssh() {
+    local target="$1"
+
+    if [[ -z "$target" ]]; then
+      local configs=("$HOME/.ssh/config" "$HOME/.ssh/config.d/*")
+      local hosts=$(grep -hE '^Host ' "${configs[@]}" 2>/dev/null | awk '{print $2}' | grep -vE '\*|\?' | sort -u)
+
+      target=$(echo "$hosts" | fzf --height=40% --reverse --prompt="SSH > " --preview="ssh -GT {} | awk '/^hostname |^user /'" --preview-window=up:2:wrap)
+    fi
+
+    if [ -n "$target" ]; then
+      command ssh "$target" "${@:2}"
+    fi
+  }
+fi
+
 ## Grep
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
 alias grep="grep --color=auto"

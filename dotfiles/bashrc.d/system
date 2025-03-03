@@ -2,7 +2,6 @@
 
 ## Actions
 alias halt="sudo /sbin/halt"
-alias please='sudo "$BASH" -c "$(history -p !!)"'
 alias poweroff="sudo /sbin/poweroff"
 alias reboot="sudo /sbin/reboot"
 alias shutdown="sudo /sbin/shutdown"
@@ -21,6 +20,11 @@ fi
 alias pscpu="ps auxf | sort -nr -k 3"
 alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
 
+## fastfetch - https://github.com/fastfetch-cli/fastfetch
+if command -v fastfetch >/dev/null 2>&1; then
+  alias neofetch="fastfetch"
+fi
+
 ## Memory
 alias df="df -H"
 alias du="du -ch"
@@ -31,11 +35,6 @@ alias psmem="ps auxf | sort -nr -k 4"
 alias psmem10="ps auxf | sort -nr -k 4 | head -10"
 if [ -f /var/log/Xorg.0.log ]; then
   alias gpumeminfo="grep -i --color memory /var/log/Xorg.0.log"
-fi
-
-## screenFetch - https://github.com/KittyKatt/screenFetch
-if command -v screenfetch >/dev/null 2>&1; then
-  alias neofetch="screenfetch"
 fi
 
 ## Time

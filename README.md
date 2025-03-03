@@ -9,11 +9,13 @@ with [Dotbot] for a smooth installation process.
 - [atuin]: Modern shell history with search.
 - [bat]: A `cat` clone with syntax highlighting.
 - [bottom]: A graphical system monitor.
+- [dry]: A terminal application to manage and monitor Docker containers.
 - [eza]: A modern replacement for `ls`.
+- [fastfetch]: A system info fetcher.
+- [fzf]: A command-line fuzzy finder.
 - [git-cliff]: A customizable changelog generator.
 - [git-delta]: A syntax-highlighting pager for git diffs.
 - [onefetch]: A tool to display repository information.
-- [screenfetch]: A system info fetcher.
 - [starship]: A minimal, blazing-fast, and customizable prompt.
 - [tealdeer]: A fast implementation of `TLDR`.
 - [zoxide]: A smarter way to navigate your filesystem.
@@ -94,11 +96,13 @@ pull request. Let's keep these dotfiles evolving!
 [atuin]: https://atuin.sh/
 [bat]: https://github.com/sharkdp/bat
 [bottom]: https://github.com/ClementTsang/bottom
+[dry]: https://moncho.github.io/dry/
 [eza]: https://github.com/eza-community/eza
+[fastfetch]: https://github.com/fastfetch-cli/fastfetch
+[fzf]: https://github.com/junegunn/fzf
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta
 [onefetch]: https://onefetch.dev/
-[screenfetch]: https://github.com/KittyKatt/screenFetch
 [starship]: https://starship.rs/
 [tealdeer]: https://github.com/tealdeer-rs/tealdeer
 [zoxide]: https://github.com/ajeetdsouza/zoxide
