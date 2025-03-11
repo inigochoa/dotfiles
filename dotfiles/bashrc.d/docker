@@ -25,6 +25,8 @@ if command -v docker >/dev/null 2>&1; then
   alias dksp='docker system prune -a -f'
 
   ## Markdown to PDF
+  alias mdtodocx='docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf mdtodocx'
+  alias mdtohtml='docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf mdtohtml'
   alias mdtopdf='docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf mdtopdf'
-  alias w-mdtopdf='docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf  w-mdtopdf'
+  alias w-mdtopdf='docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf w-mdtopdf'
 fi
