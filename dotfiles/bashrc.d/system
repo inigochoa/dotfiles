@@ -37,6 +37,11 @@ if [ -f /var/log/Xorg.0.log ]; then
   alias gpumeminfo="grep -i --color memory /var/log/Xorg.0.log"
 fi
 
+## procs - https://github.com/dalance/procs
+if command -v procs >/dev/null 2>&1; then
+  alias ps="procs --tree"
+fi
+
 ## Time
 alias now="date +'%T'"
 alias nowdate="date +'%d-%m-%Y'"

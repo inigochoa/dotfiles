@@ -9,15 +9,20 @@ with [Dotbot] for a smooth installation process.
 - [atuin]: Modern shell history with search.
 - [bat]: A `cat` clone with syntax highlighting.
 - [bottom]: A graphical system monitor.
+- [ctop]: Top-like interface for container metrics.
 - [dry]: A terminal application to manage and monitor Docker containers.
 - [eza]: A modern replacement for `ls`.
 - [fastfetch]: A system info fetcher.
 - [fzf]: A command-line fuzzy finder.
 - [git-cliff]: A customizable changelog generator.
-- [git-delta]: A syntax-highlighting pager for git diffs.
+- [git-delta]: A syntax-highlighting pager for `git diffs`.
+- [gping]: A `ping` replacement with a graph.
+- [nvm]: A version manager for node.js.
 - [onefetch]: A tool to display repository information.
+- [procs]: A replacement for `ps`.
 - [starship]: A minimal, blazing-fast, and customizable prompt.
-- [tealdeer]: A fast implementation of `TLDR`.
+- [tealdeer]: A fast implementation of `tldr`.
+- [xh]: A friendly and fast tool for sending HTTP requests.
 - [zoxide]: A smarter way to navigate your filesystem.
 
 ## Directory Structure & Files 📁
@@ -42,7 +47,9 @@ with [Dotbot] for a smooth installation process.
 │   │   ├── atuin/
 │   │   ├── bat/
 │   │   ├── bottom/
+│   │   ├── fastfetch/
 │   │   ├── git-cliff/
+│   │   ├── procs/
 │   │   ├── tealdeer/
 │   │   └── starship.toml
 │   ├── bash_logout       # executed when login shell exits
@@ -96,13 +103,18 @@ pull request. Let's keep these dotfiles evolving!
 [atuin]: https://atuin.sh/
 [bat]: https://github.com/sharkdp/bat
 [bottom]: https://github.com/ClementTsang/bottom
+[ctop]: https://github.com/bcicen/ctop
 [dry]: https://moncho.github.io/dry/
 [eza]: https://github.com/eza-community/eza
 [fastfetch]: https://github.com/fastfetch-cli/fastfetch
 [fzf]: https://github.com/junegunn/fzf
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta
+[gping]: https://github.com/orf/gping
+[nvm]: https://github.com/nvm-sh/nvm
 [onefetch]: https://onefetch.dev/
+[procs]: https://github.com/dalance/procs
 [starship]: https://starship.rs/
 [tealdeer]: https://github.com/tealdeer-rs/tealdeer
+[xh]: https://github.com/ducaale/xh
 [zoxide]: https://github.com/ajeetdsouza/zoxide

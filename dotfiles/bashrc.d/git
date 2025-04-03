@@ -6,6 +6,55 @@ gclone() {
   git clone "$1" && cd "$(basename "$1" .git)"
 }
 
+## Open a git repository in browser
+gopen() {
+  case "$(uname -s)" in
+    Linux*)  OPEN_CMD="xdg-open";;
+    Darwin*) OPEN_CMD="open";;
+    CYGWIN*|MINGW*|MSYS*) OPEN_CMD="start";;
+    *) echo "Sistema operativo no soportado" && return 1;;
+  esac
+
+  local remote="origin"
+  if [ -n "$1" ]; then
+    remote="$1"
+  fi
+
+  local url=$(git remote get-url $remote)
+  if [ $? -ne 0 ]; then
+    echo "El remoto '$remote' no existe"
+    return 1
+  fi
+
+  if [[ $url == git@* ]]; then
+    url=$(echo $url | sed -E 's|git@([^:]+):|https://\1/|')
+  fi
+
+  url=$(echo $url | sed 's|\.git$||')
+
+  local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+  if [ $? -ne 0 ]; then
+    echo "Abriendo $url"
+    $OPEN_CMD "$url"
+    return 0
+  fi
+
+  if [[ $url == *github.com* ]]; then
+    url="$url/tree/$branch"
+  elif [[ $url == *gitlab* ]]; then
+    url="$url/-/tree/$branch"
+  elif [[ $url == *bitbucket* ]]; then
+    url="$url/src/$branch"
+  elif [[ $url == *gitea* ]]; then
+    url="$url/src/branch/$branch"
+  else
+    echo "Proveedor no reconocido específicamente, abriendo URL base"
+  fi
+
+  echo "Abriendo $url"
+  $OPEN_CMD "$url"
+}
+
 ### Sync a repository with base remote
 gsync() {
   local branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')

@@ -20,6 +20,7 @@ alias reload="source ~/.bash_profile"
 
 ## Editor
 export EDITOR=vim
+alias e=$EDITOR
 
 ## Functions
 ### Show bash aliases

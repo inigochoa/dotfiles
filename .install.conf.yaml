@@ -28,7 +28,9 @@
         fastfetch,
         fzf,
         git-delta,
+        gping,
         onefetch,
+        procs,
         tealdeer,
         zoxide
     ]
@@ -49,7 +51,9 @@
     ~/.config/atuin: config/atuin
     ~/.config/bat: config/bat
     ~/.config/bottom: config/bottom
+    ~/.config/fastfetch: config/fastfetch
     ~/.config/git-cliff: config/git-cliff
+    ~/.config/procs: config/procs
     ~/.config/tealdeer: config/tealdeer
     ~/.config/starship.toml: config/starship.toml
 
