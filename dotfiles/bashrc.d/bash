@@ -62,6 +62,16 @@ alias plz=please
 
 ## fzf - https://github.com/junegunn/fzf
 if command -v fzf >/dev/null 2>&1; then
+  ### Genereated with https://vitormv.github.io/fzf-themes/
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626
+  --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
+  --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf
+  --color=border:#d0d0d0,label:#aeaeae,query:#d9d9d9
+  --border="rounded" --border-label-pos="0" --preview-window="border-rounded"
+  --prompt="> " --marker=">"
+  --pointer="◆" --separator="─" --scrollbar="│" --info="right"'
+
   ### ssh selection
   ssh() {
     local target="$1"
@@ -70,7 +80,7 @@ if command -v fzf >/dev/null 2>&1; then
       local configs=("$HOME/.ssh/config" "$HOME/.ssh/config.d/*")
       local hosts=$(grep -hE '^Host ' "${configs[@]}" 2>/dev/null | awk '{print $2}' | grep -vE '\*|\?' | sort -u)
 
-      target=$(echo "$hosts" | fzf --height=40% --reverse --prompt="SSH > " --preview="ssh -GT {} | awk '/^hostname |^user /'" --preview-window=up:2:wrap)
+      target=$(echo "$hosts" | fzf --border-label=" SSH " --height=40% --prompt="SSH > " --preview="ssh -GT {} | awk '/^hostname |^user /'" --preview-window=up:2:wrap)
     fi
 
     if [ -n "$target" ]; then
