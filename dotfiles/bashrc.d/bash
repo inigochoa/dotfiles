@@ -98,3 +98,10 @@ fi
 
 ## Grep
 alias grep="grep --color=auto"
+
+## Personal scripts at ~/.scripts.d
+if [ -d ~/.scripts.d ]; then
+  if [ -f ~/.scripts.d/fnotes.sh ]; then
+    . ~/.scripts.d/fnotes.sh
+  fi
+fi

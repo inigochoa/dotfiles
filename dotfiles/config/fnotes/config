@@ -1,0 +1,6 @@
+EDITOR=vim
+IDE=code
+
+DIARY_DIR=Diary
+NOTES_DIR=Notes
+QUICK_DIR=Quick

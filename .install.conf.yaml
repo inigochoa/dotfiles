@@ -43,6 +43,7 @@
     ~/.bash_logout:
     ~/.bash_profile:
     ~/.bashrc:
+    ~/.scripts.d:
 
     ## git files
     ~/.gitconfig:
@@ -53,6 +54,7 @@
     ~/.config/bat: config/bat
     ~/.config/bottom: config/bottom
     ~/.config/fastfetch: config/fastfetch
+    ~/.config/fnotes: config/fnotes
     ~/.config/git-cliff: config/git-cliff
     ~/.config/procs: config/procs
     ~/.config/tealdeer: config/tealdeer
