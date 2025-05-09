@@ -1,5 +1,13 @@
 add_newline = false
 
+[[battery.display]] # 'bold red' style when capacity is between 0% and 15%
+threshold = 25
+style = 'bold red'
+
+[[battery.display]] # 'bold yellow' style when capacity is between 15% and 40%
+threshold = 40
+style = 'bold yellow'
+
 [character]
 error_symbol = "[✗](red)"
 success_symbol = "[➜](green)"
