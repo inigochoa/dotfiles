@@ -77,6 +77,8 @@ if command -v fzf >/dev/null 2>&1; then
   --prompt="> " --marker=">"
   --pointer="◆" --separator="─" --scrollbar="│" --info="right"'
 
+  alias fview="fzf --preview='bat --color=always --style=numbers --line-range=:500 {}'"
+
   ### ssh selection
   ssh() {
     local target="$1"
