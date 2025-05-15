@@ -4,7 +4,7 @@
 # fnotes - A simple yet powerful note-taking script
 # ---------------------------------------------------
 # Author: Iñigo Ochoa
-# Version: 1.0.1
+# Version: 1.0.2
 # License: MIT
 #
 # Features:
@@ -20,7 +20,7 @@
 #---------------------------------
 NAME="fnotes"
 CONFIG_FILE="$HOME/.config/$NAME/config"
-VERSION="1.0.1"
+VERSION="1.0.2"
 
 ## ANSI colors for terminal output
 BLUE="\033[1;34m"
@@ -71,7 +71,11 @@ __fnotes_create() {
   local note="$(__fnotes_slugify "$1")"
   local folder="${2:-}"
   local content="${3:-}"
-  local path="$NOTES_DIR/$folder"
+  local path="$NOTES_DIR"
+
+  [ -n "$folder" ] && {
+    path="$path/$folder"
+  }
 
   __fnotes_ensure_folder "$path"
 
