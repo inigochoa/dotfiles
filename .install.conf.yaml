@@ -14,6 +14,12 @@
         stderr: true
         stdout: true
     -
+        command: ../.dotbot-scripts/rpm-installs.sh
+        description: Install from rpm downloads
+        quiet: true
+        stderr: true
+        stdout: true
+    -
         command: ../.dotbot-scripts/sh-installs.sh
         description: Install from shell
         quiet: true

@@ -105,3 +105,37 @@ if [ -d ~/.scripts.d ]; then
     . ~/.scripts.d/fnotes.sh
   fi
 fi
+
+## timer - https://github.com/caarlos0/timer
+if command -v timer >/dev/null 2>&1; then
+  ### Pomodoro timer
+  pomo() {
+    [[ -z "$1" ]] && {
+      echo "Usage: pomodoro [work|break]"
+      return 1
+    }
+
+    local -A options
+    options["break"]=10
+    options["work"]=45
+
+    [[ -z "${options["$1"]}" ]] && {
+      echo "Error: Unknown session type '$1'"
+      echo "Available: ${!options[@]}"
+      return 1
+    }
+
+    clear
+
+    local body="Session completed!"
+    timer ${options["$1"]}m --format 24h --name "$1" || {
+      body="Session interrupted!"
+    }
+
+    notify-send "$1" "$body" --app-name="🍅 Pomodoro" --expire-time=0 2>/dev/null
+  }
+
+  ### Pomodoro timer aliases
+  alias pbr="pomodoro break"
+  alias pwo="pomodoro work"
+fi
