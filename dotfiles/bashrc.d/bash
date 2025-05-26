@@ -111,7 +111,7 @@ if command -v timer >/dev/null 2>&1; then
   ### Pomodoro timer
   pomodoro() {
     [[ -z "$1" ]] && {
-      echo "Usage: pomodoro [work|break]"
+      echo "Usage: pomodoro [break|work|<minutes>]"
       return 1
     }
 
@@ -119,20 +119,29 @@ if command -v timer >/dev/null 2>&1; then
     options["break"]=10
     options["work"]=45
 
-    [[ -z "${options["$1"]}" ]] && {
+    local minutes
+    local session
+
+    if [[ "$1" =~ ^[0-9]+$ ]]; then
+      minutes="$1"
+      session="custom"
+    elif [[ -n "${options["$1"]}" ]]; then
+      minutes="${options["$1"]}"
+      session="$1"
+    else
       echo "Error: Unknown session type '$1'"
-      echo "Available: ${!options[@]}"
+      echo "Available: ${!options[@]} or custom minutes (e.g., 25)"
       return 1
-    }
+    fi
 
     clear
 
     local body="Session completed!"
-    timer ${options["$1"]}m --format 24h --name "$1" || {
+    timer ${minutes}m --format 24h --name "$session" || {
       body="Session interrupted!"
     }
 
-    notify-send "$1" "$body" --app-name="🍅 Pomodoro" --expire-time=0 2>/dev/null
+    notify-send "$session" "$body" --app-name="🍅 Pomodoro" --expire-time=0 2>/dev/null
   }
 
   ### Pomodoro timer aliases
