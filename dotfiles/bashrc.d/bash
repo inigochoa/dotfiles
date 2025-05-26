@@ -109,7 +109,7 @@ fi
 ## timer - https://github.com/caarlos0/timer
 if command -v timer >/dev/null 2>&1; then
   ### Pomodoro timer
-  pomo() {
+  pomodoro() {
     [[ -z "$1" ]] && {
       echo "Usage: pomodoro [work|break]"
       return 1
