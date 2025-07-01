@@ -12,6 +12,7 @@
   # Branches
   cof = "!cb() { git checkout $1 -- $2; }; cb"
   mb = checkout -B
+  sb = "!switch_branch_fzf() { git branch | fzf | xargs git checkout; }; switch_branch_fzf"
 
   # Commits in increasing detail
   l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
