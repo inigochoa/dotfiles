@@ -9,6 +9,28 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 
 ## Functions
+### Fuzzy finder for project directories with tree preview and automatic navigation
+cdprojects() {
+  local location="$HOME/Proyectos"
+  local sites=""
+
+  if [[ -d "$location" ]]; then
+    sites=$(find "$location" -maxdepth 1 -type d -not -path "*/\.*" | grep -v "^$location$")
+
+    if [[ -z "$sites" ]]; then
+      echo "No sites found"
+      exit 1
+    fi
+  fi
+
+  local cmd="tree -L 2 --dirsfirst -C {}"
+  local site=$(echo "$sites" | sort | fzf --reverse --with-nth=-1 --delimiter='/' --preview "$cmd" --preview-window=right:70%)
+
+  if [[ -n "$site" ]]; then
+    cd $site
+  fi
+}
+
 ### Create a directory and cd inside
 mkd() {
   mkdir "$@" && cd "$_";
