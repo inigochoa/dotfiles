@@ -99,13 +99,6 @@ fi
 ## Grep
 alias grep="grep --color=auto"
 
-## Personal scripts at ~/.scripts.d
-if [ -d ~/.scripts.d ]; then
-  if [ -f ~/.scripts.d/fnotes.sh ]; then
-    . ~/.scripts.d/fnotes.sh
-  fi
-fi
-
 ## timer - https://github.com/caarlos0/timer
 if command -v timer >/dev/null 2>&1; then
   ### Pomodoro timer
