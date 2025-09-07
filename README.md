@@ -17,6 +17,7 @@ with [Dotbot] for a smooth installation process.
 - [git-cliff]: A customizable changelog generator.
 - [git-delta]: A syntax-highlighting pager for `git diffs`.
 - [gping]: A `ping` replacement with a graph.
+- [lnav]: A log file viewer for the terminal.
 - [nvm]: A version manager for node.js.
 - [onefetch]: A tool to display repository information.
 - [procs]: A replacement for `ps`.
@@ -111,6 +112,7 @@ pull request. Let's keep these dotfiles evolving!
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta
 [gping]: https://github.com/orf/gping
+[lnav]: https://lnav.org/
 [nvm]: https://github.com/nvm-sh/nvm
 [onefetch]: https://onefetch.dev/
 [procs]: https://github.com/dalance/procs
