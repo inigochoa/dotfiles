@@ -50,7 +50,6 @@
     ~/.bash_logout:
     ~/.bash_profile:
     ~/.bashrc:
-    ~/.scripts.d:
 
     ## git files
     ~/.gitconfig:
