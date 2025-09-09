@@ -30,6 +30,7 @@
     - install: [
         bat,
         bottom,
+        duf,
         eza,
         fastfetch,
         fd-find,
