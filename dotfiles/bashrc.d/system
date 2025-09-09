@@ -37,6 +37,11 @@ if [ -f /var/log/Xorg.0.log ]; then
   alias gpumeminfo="grep -i --color memory /var/log/Xorg.0.log"
 fi
 
+## duf - https://github.com/muesli/duf
+if command -v duf >/dev/null 2>&1; then
+  alias df="duf --hide-fs squashfs"
+fi
+
 ## procs - https://github.com/dalance/procs
 if command -v procs >/dev/null 2>&1; then
   alias ps="procs --tree"
