@@ -11,6 +11,7 @@ with [Dotbot] for a smooth installation process.
 - [bottom]: A graphical system monitor.
 - [ctop]: Top-like interface for container metrics.
 - [dry]: A terminal application to manage and monitor Docker containers.
+- [duf]: A disk usage/free utility.
 - [eza]: A modern replacement for `ls`.
 - [fastfetch]: A system info fetcher.
 - [fzf]: A command-line fuzzy finder.
@@ -106,6 +107,7 @@ pull request. Let's keep these dotfiles evolving!
 [bottom]: https://github.com/ClementTsang/bottom
 [ctop]: https://github.com/bcicen/ctop
 [dry]: https://moncho.github.io/dry/
+[duf]: https://github.com/muesli/duf
 [eza]: https://github.com/eza-community/eza
 [fastfetch]: https://github.com/fastfetch-cli/fastfetch
 [fzf]: https://github.com/junegunn/fzf
