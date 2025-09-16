@@ -1,6 +1,8 @@
 # ~/.bashrc.d/node
 
 ## Tools
+alias bench="pnpx autocannon --latency --renderStatusCodes"
+alias benchhard="bench --connections 200 --duration 60"
 alias card="pnpx @inigochoa/card"
 alias npkill="pnpx npkill ."
 alias serve="pnpx serve"
