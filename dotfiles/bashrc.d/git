@@ -55,13 +55,13 @@ gopen() {
   $OPEN_CMD "$url"
 }
 
-### Sync a repository with base remote
+### Sync a repository with upstream remote
 gsync() {
   local branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   local stashed=false
 
-  echo "🔄 Synchronizing branch $branch between origin and base..."
+  echo "🔄 Synchronizing branch $branch between origin and upstream..."
 
   ## Save local changes
   if ! git diff --quiet; then
@@ -98,10 +98,10 @@ gsync() {
     return 1
   fi
 
-  ## Fetching from base
-  echo "🔍 Fetching changes from base..."
-  if ! git fetch base; then
-    echo "❌ Error fetching changes from base"
+  ## Fetching from upstream
+  echo "🔍 Fetching changes from upstream..."
+  if ! git fetch upstream; then
+    echo "❌ Error fetching changes from upstream"
 
     if [ true = "$stashed" ]; then
       git stash pop
@@ -110,9 +110,9 @@ gsync() {
     return 1
   fi
 
-  ## Merge from base
-  echo "🔀 Merging changes from base/$branch..."
-  if git merge "base/$branch"; then
+  ## Merge from upstram
+  echo "🔀 Merging changes from upstram/$branch..."
+  if git merge "upstram/$branch"; then
     echo "✅ Merge successful. Pushing changes to origin/$branch..."
 
     if git push origin "$branch"; then
