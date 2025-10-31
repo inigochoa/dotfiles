@@ -90,7 +90,7 @@ if command -v fzf >/dev/null 2>&1; then
 
     if [[ -z "$target" ]]; then
       local configs=("$HOME/.ssh/config" "$HOME/.ssh/config.d/*")
-      local hosts=$(grep -hE '^Host ' "${configs[@]}" 2>/dev/null | awk '{print $2}' | grep -vE '\*|\?' | sort -u)
+      local hosts=$(grep -hE '^Host ' "${configs[@]}" 2>/dev/null | awk '{print $2}' | grep -vE '\*|\?' | sort -u -V)
 
       target=$(echo "$hosts" | fzf --border-label=" SSH " --height=40% --prompt="SSH > " --preview="ssh -GT {} | awk '/^hostname |^user /'" --preview-window=up:2:wrap)
     fi

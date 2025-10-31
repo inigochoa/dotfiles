@@ -24,7 +24,7 @@ cdprojects() {
   fi
 
   local cmd="tree -L 2 --dirsfirst -C {}"
-  local site=$(echo "$sites" | sort | fzf --reverse --with-nth=-1 --delimiter='/' --preview "$cmd" --preview-window=right:70%)
+  local site=$(echo "$sites" | sort -u -V | fzf --reverse --with-nth=-1 --delimiter='/' --preview "$cmd" --preview-window=right:70%)
 
   if [[ -n "$site" ]]; then
     cd $site
