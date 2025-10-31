@@ -5,6 +5,8 @@ alias bench="pnpx autocannon --latency --renderStatusCodes"
 alias benchhard="bench --connections 200 --duration 60"
 alias card="pnpx @inigochoa/card"
 alias npkill="pnpx npkill ."
+alias present="pnpx reveal-md"
+alias revealmd="pnpx reveal-md"
 alias serve="pnpx serve"
 
 ## nvm - https://github.com/nvm-sh/nvm
