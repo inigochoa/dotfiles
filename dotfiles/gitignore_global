@@ -39,6 +39,10 @@ Thumbs.db
 *.tar
 *.zip
 
+# Syncthing
+.stfolder
+.stignore
+
 # Temporary files
 *.swo
 *.swp
