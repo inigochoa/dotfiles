@@ -15,6 +15,7 @@ with [Dotbot] for a smooth installation process.
 - [eza]: A modern replacement for `ls`.
 - [fastfetch]: A system info fetcher.
 - [fzf]: A command-line fuzzy finder.
+- [ghostty]: A fast, feature-rich terminal emulator.
 - [git-cliff]: A customizable changelog generator.
 - [git-delta]: A syntax-highlighting pager for `git diffs`.
 - [gping]: A `ping` replacement with a graph.
@@ -50,6 +51,7 @@ with [Dotbot] for a smooth installation process.
 │   │   ├── bat/
 │   │   ├── bottom/
 │   │   ├── fastfetch/
+│   │   ├── ghostty/
 │   │   ├── git-cliff/
 │   │   ├── procs/
 │   │   ├── tealdeer/
@@ -111,6 +113,7 @@ pull request. Let's keep these dotfiles evolving!
 [eza]: https://github.com/eza-community/eza
 [fastfetch]: https://github.com/fastfetch-cli/fastfetch
 [fzf]: https://github.com/junegunn/fzf
+[ghostty]: https://ghostty.org/
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta
 [gping]: https://github.com/orf/gping

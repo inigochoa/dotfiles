@@ -64,6 +64,7 @@
     ~/.config/bat: config/bat
     ~/.config/bottom: config/bottom
     ~/.config/fastfetch: config/fastfetch
+    ~/.config/ghostty: config/ghostty
     ~/.config/git-cliff: config/git-cliff
     ~/.config/procs: config/procs
     ~/.config/tealdeer: config/tealdeer
