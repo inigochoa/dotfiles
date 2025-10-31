@@ -1,4 +1,5 @@
 add_newline = false
+command_timeout = 1000
 
 [[battery.display]] # 'bold red' style when capacity is between 0% and 15%
 threshold = 25
