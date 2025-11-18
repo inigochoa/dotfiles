@@ -24,11 +24,14 @@ cursor-style = block
 cursor-style-blink = false
 
 ## Font
+adjust-cell-height = 0
 font-family = JetBrainsMono Nerd Font
 font-feature = +calt, -dlig, +liga
 font-size = 11
+font-thicken = true
 
 ## GTK
+gtk-titlebar-style = tabs
 gtk-single-instance = desktop
 gtk-wide-tabs = false
 
@@ -39,7 +42,7 @@ linux-cgroup-processes-limit = 1000
 
 ## Performance
 quit-after-last-window-closed = false
-scrollback-limit = 100000000
+scrollback-limit = 10000
 
 ## Security
 clipboard-paste-protection = true
@@ -49,15 +52,43 @@ title-report = false
 
 ## Shell
 shell-integration = detect
-shell-integration-features = sudo
+shell-integration-features = cursor,sudo,title
 term = xterm-256color
+
+## Keybinds - Font control
+keybind = ctrl+0=reset_font_size
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+plus=increase_font_size:1
+
+## Keybinds - Go to split
+keybind = ctrl+shift+down=goto_split:bottom
+keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+right=goto_split:right
+keybind = ctrl+shift+up=goto_split:top
+
+## Keybinds - New split
+keybind = ctrl+shift+a=new_split:left
+keybind = ctrl+shift+d=new_split:right
+keybind = ctrl+shift+s=new_split:down
+keybind = ctrl+shift+w=new_split:up
+
+## Keybinds - Tabs
+keybind = ctrl+shift+1=goto_tab:1
+keybind = ctrl+shift+2=goto_tab:2
+keybind = ctrl+shift+3=goto_tab:3
+keybind = ctrl+shift+4=goto_tab:4
+keybind = ctrl+shift+5=goto_tab:5
+keybind = ctrl+shift+tab=previous_tab
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+q=close_surface
+keybind = ctrl+tab=next_tab
 
 ## Theme
 background-opacity = 0.95
-theme = Catppuccin Mocha
+theme = TokyoNight
 
 ## Window
-window-decoration = true
+window-decoration = none
 window-padding-balance = true
 window-padding-color = background
 window-padding-x = 4
