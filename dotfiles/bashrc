@@ -21,8 +21,3 @@ if [ -d ~/.bashrc.d ]; then
   done
 fi
 unset rc
-
-# Start IBus
-if ! pgrep -x "ibus-daemon" > /dev/null; then
-  ibus start
-fi
