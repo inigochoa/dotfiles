@@ -61,6 +61,7 @@ with [Dotbot] for a smooth installation process.
 │   ├── bash_logout       # executed when login shell exits
 │   ├── bash_profile      # used in login shells
 │   ├── bashrc            # default user bashrc file
+│   ├── editorconfig      # default editorconfig file
 │   ├── gitconfig         # git aliases
 │   └── gitignore_global  # global git ignored files
 ├── .install.conf.yaml    # dotbot install config
