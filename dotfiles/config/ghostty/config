@@ -85,7 +85,7 @@ keybind = ctrl+tab=next_tab
 
 ## Theme
 background-opacity = 0.95
-theme = TokyoNight
+theme = Breeze
 
 ## Window
 window-decoration = none
