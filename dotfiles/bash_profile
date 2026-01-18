@@ -2,5 +2,3 @@
 
 ## Aliases and functions
 . ~/.bashrc
-
-export PATH=$PATH:/home/veiss/.spicetify
