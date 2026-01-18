@@ -1,9 +1,7 @@
 # ~/.bashrc.d/bash
 
 ## atuin - https://atuin.sh/
-if [ -d ~/.atuin ]; then
-  . ~/.atuin/bin/env
-
+if command -v atuin >/dev/null 2>&1; then
   ## Source preexec functions
   if [ -f ~/.bash-preexec.sh ]; then
     . ~/.bash-preexec.sh
