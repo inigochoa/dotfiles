@@ -18,6 +18,7 @@ with [Dotbot] for a smooth installation process.
 - [ghostty]: A fast, feature-rich terminal emulator.
 - [git-cliff]: A customizable changelog generator.
 - [git-delta]: A syntax-highlighting pager for `git diffs`.
+- [gitmoji]: A CLI tool for adding emojis to Git commit messages interactively.
 - [gping]: A `ping` replacement with a graph.
 - [lnav]: A log file viewer for the terminal.
 - [nvm]: A version manager for node.js.
@@ -25,6 +26,7 @@ with [Dotbot] for a smooth installation process.
 - [procs]: A replacement for `ps`.
 - [starship]: A minimal, blazing-fast, and customizable prompt.
 - [tealdeer]: A fast implementation of `tldr`.
+- [tokei]: Displays statistics about your code.
 - [xh]: A friendly and fast tool for sending HTTP requests.
 - [zoxide]: A smarter way to navigate your filesystem.
 
@@ -116,6 +118,7 @@ pull request. Let's keep these dotfiles evolving!
 [ghostty]: https://ghostty.org/
 [git-cliff]: https://github.com/orhun/git-cliff
 [git-delta]: https://github.com/dandavison/delta
+[gitmoji]: https://www.npmjs.com/package/gitmoji-cli
 [gping]: https://github.com/orf/gping
 [lnav]: https://lnav.org/
 [nvm]: https://github.com/nvm-sh/nvm
@@ -123,5 +126,6 @@ pull request. Let's keep these dotfiles evolving!
 [procs]: https://github.com/dalance/procs
 [starship]: https://starship.rs/
 [tealdeer]: https://github.com/tealdeer-rs/tealdeer
+[tokei]: https://github.com/XAMPPRocky/tokei
 [xh]: https://github.com/ducaale/xh
 [zoxide]: https://github.com/ajeetdsouza/zoxide

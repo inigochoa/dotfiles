@@ -8,6 +8,12 @@
 
 - shell:
     -
+        command: ../.dotbot-scripts/rust-installs.sh
+        description: Install from cargo
+        quiet: true
+        stderr: true
+        stdout: true
+    -
         command: ../.dotbot-scripts/dnf-repositories.sh
         description: Enable DNF repositories
         quiet: true
@@ -25,23 +31,20 @@
         quiet: true
         stderr: true
         stdout: true
+    -
+        command: ../.dotbot-scripts/node-installs.sh
+        description: Install from NPM registry
+        quiet: true
+        stderr: true
+        stdout: true
 
 - omnipkg:
     - install: [
-        bat,
-        bottom,
         duf,
-        eza,
         fastfetch,
         fd-find,
         fzf,
-        git-delta,
-        gping,
         lnav,
-        onefetch,
-        procs,
-        tealdeer,
-        zoxide
     ]
 
 - link:
