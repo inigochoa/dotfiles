@@ -1,4 +1,4 @@
-# ~/.bashrc.d/system
+# ~/.bashrc.d/09-system
 
 ## Actions
 alias halt="sudo /sbin/halt"
@@ -50,3 +50,8 @@ fi
 ## Time
 alias now="date +'%T'"
 alias nowdate="date +'%d-%m-%Y'"
+
+## Updates
+alias upd-all="upd-cargo && upd-dnf"
+alias upd-cargo="cargo install-update --all"
+alias upd-dnf="sudo dnf upgrade --refresh -y"

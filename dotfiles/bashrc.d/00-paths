@@ -1,0 +1,12 @@
+# ~/.bashrc.d/00-paths
+
+## Additional paths.
+### Cargo
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
+
+### Spicetify
+if [ -d "$HOME/.spicetify" ]; then
+  PATH="$PATH:$HOME/.spicetify"
+fi

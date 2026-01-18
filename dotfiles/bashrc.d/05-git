@@ -1,4 +1,4 @@
-# ~/.bashrc.d/git
+# ~/.bashrc.d/05-git
 
 ## Functions
 ### Clone a git repository and cd inside

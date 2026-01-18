@@ -1,4 +1,4 @@
-# ~/.bashrc.d/node
+# ~/.bashrc.d/07-node
 
 ## Tools
 alias bench="pnpx autocannon --latency --renderStatusCodes"

@@ -1,4 +1,4 @@
-# ~/.bashrc.d/bash
+# ~/.bashrc.d/01-bash
 
 ## atuin - https://atuin.sh/
 if command -v atuin >/dev/null 2>&1; then

@@ -1,4 +1,4 @@
-# ~/.bashrc.d/docker
+# ~/.bashrc.d/03-docker
 
 if command -v docker >/dev/null 2>&1; then
   ## Docker basic management

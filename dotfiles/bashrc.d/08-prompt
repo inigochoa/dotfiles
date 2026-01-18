@@ -1,4 +1,4 @@
-# ~/.bashrc.d/prompt
+# ~/.bashrc.d/08-prompt
 
 ## Default prompt
 COLOR_BLUE='\[\e[34m\]'

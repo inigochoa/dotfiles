@@ -1,4 +1,4 @@
-# ~/.bashrc.d/internet
+# ~/.bashrc.d/06-internet
 
 ## Functions
 ### Show SSL certificate expiration of a given domain

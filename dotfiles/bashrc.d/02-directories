@@ -1,4 +1,4 @@
-# ~/.bashrc.d/directories
+# ~/.bashrc.d/02-directories
 
 ## cd
 alias cd..="cd .."
