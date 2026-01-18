@@ -25,9 +25,9 @@
   who = shortlog -n -s --no-merges
 
   # Commiting
-  c = commit
+  c = !gitmoji -c
   ca = commit --amend --no-edit
-  cm = "!cim() { git commit -m \"$1\"; }; cim"
+  cm = "!cim() { gitmoji -c --title=\"$1\"; }; cim"
 
   # Diffs
   diffc = diff --cached HEAD^
