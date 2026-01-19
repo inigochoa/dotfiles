@@ -1,47 +1,59 @@
-add_newline = false
-command_timeout = 1000
+# ============= Prompt =================
 
-[[battery.display]] # 'bold red' style when capacity is between 0% and 15%
+add_newline = false
+command_timeout = 2000
+format = """
+$username$directory$git_branch$git_status$memory_usage$fill$cmd_duration
+$battery$character"""
+
+# ============= Modules ================
+
+[battery]
+charging_symbol = '⇡ '
+discharging_symbol = '⇣ '
+full_symbol = '• '
+unknown_symbol = '• '
+
+## Between 0% and 25%
+[[battery.display]]
 threshold = 25
 style = 'bold red'
 
-[[battery.display]] # 'bold yellow' style when capacity is between 15% and 40%
-threshold = 40
+## Between 25% and 45%
+[[battery.display]]
+threshold = 45
 style = 'bold yellow'
+
+## Between 45% and 100%
+[[battery.display]]
+threshold = 100
+style = 'bold green'
 
 [character]
 error_symbol = "[✗](red)"
 success_symbol = "[➜](green)"
 
 [cmd_duration]
-format = "took [$duration]($style)"
-min_time = 0
+format = '[$duration]($style) '
+min_time = 1
 style = "bright-blue"
 
 [directory]
-format = "[in](green) [$path]($style)[$read_only]($read_only_style) "
+format = "in [$path]($style) "
 style = "yellow"
+truncate_to_repo = false
 truncation_length = 2
 truncation_symbol = "…/"
-truncate_to_repo = false
+
+[fill]
+symbol = ' '
 
 [git_branch]
-format = "\\([$branch]($style)\\) "
-style = "dimmed white"
-
-[git_commit]
-disabled = true
-
-[hostname]
-format = "[at](green) [$hostname]($style) "
-ssh_only = false
-style = "dimmed bright-purple"
+format = 'on [$branch]($style) '
 
 [memory_usage]
 disabled = false
-
-[package]
-disabled = true
+format = '[${ram}( | ${swap})]($style) '
 
 [username]
 format = "[#](blue) [$user]($style) "
