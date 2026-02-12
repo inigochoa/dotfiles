@@ -35,7 +35,6 @@ with [Dotbot] for a smooth installation process.
 ```shell
 .
 ├── .dotbot/              # dotbot submodule
-├── .dotbot-omnipkg/      # omnipkg submodule
 ├── .dotbot-scripts/      # dotbot shell scripts folder
 ├── dotfiles/             # dotfiles containing folder
 │   ├── bashrc.d/         # modularized bash configuration folder

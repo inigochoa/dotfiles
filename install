@@ -18,5 +18,4 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 "${BASEDIR}/${DOTBOT_DIR}/bin/dotbot" \
   -d "${BASEDIR}/dotfiles" \
   -c .install.conf.yaml \
-  -p "${BASEDIR}/.dotbot-omnipkg/omnipkg.py" \
   "${@}"

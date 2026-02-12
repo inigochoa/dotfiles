@@ -38,15 +38,6 @@
         stderr: true
         stdout: true
 
-- omnipkg:
-    - install: [
-        duf,
-        fastfetch,
-        fd-find,
-        fzf,
-        lnav,
-    ]
-
 - link:
     ## bash files
     ~/.bashrc.d:
