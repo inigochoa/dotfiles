@@ -1,0 +1,6 @@
+# ~/.bashrc.d/09-system
+
+## VSCodium - https://vscodium.com/
+if command -v codium >/dev/null 2>&1; then
+  alias code="codium"
+fi
