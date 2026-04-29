@@ -1,13 +1,23 @@
 # ~/.bashrc.d/07-node
 
+## fnm - https://github.com/Schniz/fnm
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell bash)"
+fi
+
 ## Tools
-alias bench="pnpx autocannon --latency --renderStatusCodes"
-alias benchhard="bench --connections 200 --duration 60"
-alias card="pnpx @inigochoa/card"
-alias npkill="pnpx npkill ."
-alias present="pnpx reveal-md"
-alias revealmd="pnpx reveal-md"
-alias serve="pnpx serve"
+if command -v pnpm >/dev/null 2>&1; then
+  alias bench="pnpx autocannon --latency --renderStatusCodes"
+  alias benchhard="bench --connections 200 --duration 60"
+  alias card="pnpx @inigochoa/card"
+  alias ghgrab="pnpx @ghgrab/ghgrab"
+  alias npkill="pnpx npkill ."
+  alias pages="pnpx gh-pages --branch pages --dist dist --dotfiles --no-history"
+  alias present="pnpx reveal-md"
+  alias revealmd="pnpx reveal-md"
+  alias serve="pnpx serve"
+  alias lighthouse="pnpx unlighthouse --no-cache --site"
+fi
 
 ## nvm - https://github.com/nvm-sh/nvm
 export NVM_DIR="$HOME/.nvm"
