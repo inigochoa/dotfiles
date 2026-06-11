@@ -34,20 +34,22 @@ with [Dotbot] for a smooth installation process.
 
 ```shell
 .
-├── .dotbot/              # dotbot submodule
-├── .dotbot-scripts/      # dotbot shell scripts folder
-├── dotfiles/             # dotfiles containing folder
-│   ├── bashrc.d/         # modularized bash configuration folder
-│   │   ├── bash          # atuin, copy, paste, grep, ...
-│   │   ├── directories   # cd, ls, eza, zoxide, ...
-│   │   ├── docker        # docker aliases
-│   │   ├── files         # bat, confirmations, safeties, ...
-│   │   ├── git           # git-cliff, onefetch, ...
-│   │   ├── internet      # certificates, pings, ...
-│   │   ├── node          # nvm, pnpm, ...
-│   │   ├── prompt        # default and starship (if installed)
-│   │   └── system        # actions, bottom, screeenFetch, ...
-│   ├── config/           # config files and folders
+├── .dotbot/                   # dotbot submodule
+├── .dotbot-scripts/           # dotbot shell scripts folder
+├── dotfiles/                  # dotfiles containing folder
+│   ├── bashrc.d/              # modularized bash configuration folder
+│   │   ├── 00-paths           # cargo, opencode, spicetify, ...
+│   │   ├── 01-bash            # atuin, copy, paste, grep, ...
+│   │   ├── 02-directories     # cd, ls, eza, zoxide, ...
+│   │   ├── 03-docker          # docker aliases
+│   │   ├── 04-files           # bat, confirmations, safeties, ...
+│   │   ├── 05-git             # git-cliff, onefetch, ...
+│   │   ├── 06-internet        # certificates, pings, ...
+│   │   ├── 07-node            # nvm, pnpm, ...
+│   │   ├── 08-prompt          # default and starship (if installed)
+│   │   ├── 09-system          # actions, bottom, screeenFetch, ...
+│   │   └── 10-apps            # vscodium
+│   ├── config/                # config files and folders
 │   │   ├── atuin/
 │   │   ├── bat/
 │   │   ├── bottom/
@@ -58,15 +60,15 @@ with [Dotbot] for a smooth installation process.
 │   │   ├── procs/
 │   │   ├── tealdeer/
 │   │   └── starship.toml
-│   ├── bash_logout       # executed when login shell exits
-│   ├── bash_profile      # used in login shells
-│   ├── bashrc            # default user bashrc file
-│   ├── editorconfig      # default editorconfig file
-│   ├── gitconfig         # git aliases
-│   └── gitignore_global  # global git ignored files
-├── .install.conf.yaml    # dotbot install config
-├── install               # dotfiles install script
-└── uptade                # repo update script
+│   ├── bash_logout            # executed when login shell exits
+│   ├── bash_profile           # used in login shells
+│   ├── bashrc                 # default user bashrc file
+│   ├── editorconfig           # default editorconfig file
+│   ├── gitconfig              # git aliases
+│   └── gitignore_global       # global git ignored files
+├── .install.conf.yaml         # dotbot install config
+├── install                    # dotfiles install script
+└── uptade                     # repo update script
 ```
 
 ## Installation with Dotbot 🚀
