@@ -9,6 +9,7 @@ with [Dotbot] for a smooth installation process.
 - [atuin]: Modern shell history with search.
 - [bat]: A `cat` clone with syntax highlighting.
 - [bottom]: A graphical system monitor.
+- [codium]: Free/Libre Open Source Software Binaries of VS Code
 - [ctop]: Top-like interface for container metrics.
 - [dry]: A terminal application to manage and monitor Docker containers.
 - [duf]: A disk usage/free utility.
@@ -112,6 +113,7 @@ pull request. Let's keep these dotfiles evolving!
 [atuin]: https://atuin.sh/
 [bat]: https://github.com/sharkdp/bat
 [bottom]: https://github.com/ClementTsang/bottom
+[codium]: https://vscodium.com/
 [ctop]: https://github.com/bcicen/ctop
 [dry]: https://moncho.github.io/dry/
 [duf]: https://github.com/muesli/duf
