@@ -51,6 +51,7 @@ with [Dotbot] for a smooth installation process.
 │   │   ├── atuin/
 │   │   ├── bat/
 │   │   ├── bottom/
+│   │   ├── codium/
 │   │   ├── fastfetch/
 │   │   ├── ghostty/
 │   │   ├── git-cliff/

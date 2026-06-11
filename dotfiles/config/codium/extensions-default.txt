@@ -1,0 +1,15 @@
+adpyke.codesnap
+alefragnani.project-manager
+anthropic.claude-code
+bradlc.vscode-tailwindcss
+editorconfig.editorconfig
+gruntfuggly.todo-tree
+midudev.better-svg
+miguelsolorio.fluent-icons
+miguelsolorio.symbols
+mikestead.dotenv
+seatonjiang.gitmoji-vscode
+tomoki1207.pdf
+waderyan.gitblame
+yzhang.markdown-all-in-one
+zhuangtongfa.material-theme

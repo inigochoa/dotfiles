@@ -63,7 +63,16 @@
     ~/.config/procs: config/procs
     ~/.config/tealdeer: config/tealdeer
     ~/.config/starship.toml: config/starship.toml
+    ~/.config/VSCodium/User/keybindings.json: config/codium/User/keybindings.json
+    ~/.config/VSCodium/User/settings.json: config/codium/User/settings.json
+    ~/.config/VSCodium/User/snippets: config/codium/User/snippets
 
 - shell:
+    -
+        command: ../.dotbot-scripts/codium-plugins.sh
+        description: Install VSCodium plugins
+        quiet: true
+        stderr: true
+        stdout: true
     - . $HOME/.bashrc
     - source $HOME/.bashrc
